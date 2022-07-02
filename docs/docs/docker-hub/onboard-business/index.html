@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!-- Page generated 2022-07-02 18:47:56 +0000-->
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex"/><title>Get started onboarding with Docker Business | Docker Documentation</title>
+  <meta name="description" content="Get started onboarding with Docker Business" />
+  <meta name="keywords" content="business, organizations, get started, onboarding">
+  <link rel="canonical" href="https://localhost:4000/docker-hub/onboard-business/" />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <link rel="apple-touch-icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+  <meta property="og:image" content="/favicons/docs@2x.ico"/>
+  <meta name="theme-color" content="#2496ed" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- hide elements that are only shown without JavaScript enabled -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>html.js .no-js { display: none !important; }</style><script defer src="/js/theme-switcher.js"></script>
+  <script defer src="/js/anchorlinks.js"></script>
+  <script defer src="/js/jquery.js"></script>
+  <script defer src="/js/bootstrap.min.js"></script>
+  <script defer src="/js/docs.js"></script><link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Book.woff2"    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/glyphicons-halflings-regular.woff2"       type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/fontawesome-webfont.woff2?v=4.7.0"        type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" id="pagestyle">
+
+  <!-- SEO stuff -->
+  <meta name="twitter:title" itemprop="title name" content="Get started onboarding with Docker Business"/>
+  <meta name="twitter:description" property="og:description" itemprop="description" content="" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:domain" content="docs.docker.com"/>
+  <meta name="twitter:site" content="@docker_docs"/>
+  <meta name="twitter:url" content="https://twitter.com/docker_docs"/>
+  <meta name="twitter:image:src" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta name="twitter:image:alt" content="Docker Documentation"/>
+  <meta property="og:title" content="Get started onboarding with Docker Business" />
+  <meta property="og:description" content="Get started onboarding with Docker Business" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:updated_time" itemprop="dateUpdated" content="2022-07-02T18:47:56+00:00"/>
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://docs.docker.com/docker-hub/onboard-business/" />
+  <meta property="og:site_name" content="Docker Documentation" />
+  <meta property="article:published_time" itemprop="datePublished" content="2022-07-02T18:47:56+00:00"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Get started onboarding with Docker Business","description":"Get started onboarding with Docker Business","url":"https://docs.docker.com/docker-hub/onboard-business/"}</script>
+  <!-- END SEO STUFF -->
+</head>
+<body class="colums">
+    <header>
+        <nav class="nav-secondary navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/">
+                <img class="logo" src="/images/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs" width="160" height="28" />
+            </a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="logo-mobile">
+    <a href="/">
+        <img src="/images/docker-icon.svg" alt="Docker Docs" title="Docker Docs" width="30" height="30" />
+    </a>
+</div>
+<div class="search-form" id="search-div">
+    <form class="search-form form-inline" id="searchForm" action="/search/" method="get">
+        <label for="st-search-input" class="sr-only">Search</label>
+        <input class="search-field form-control ds-input" id="st-search-input" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteResults"></div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container hidden-sm hidden-xs">
+    <div>
+        <ul class="nav navbar-nav"><li><a href="/" id="home">Home</a></li><li><a href="/get-started/overview/" id="guides">Guides</a></li><li><a href="/desktop/" id="manuals">Manuals</a></li><li><a href="/reference/" id="reference">Reference</a></li><li><a href="/samples/" id="samples">Samples</a></li></ul>
+    </div>
+    <div class="ctrl-right">
+        <a href="javascript:void(0)" id="menu-toggle" aria-label="Current page's menu toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="row hidden-sm hidden-xs">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li><a href="/" title="Docker docs homepage"><i class="fa fa-home"></i></a></li>
+            <li><a href="/desktop/">Manuals</a></li><li><a>Administration</a></li><li><a href="/docker-hub/onboard-business/">Onboarding</a></li><li><a href="/docker-hub/onboard-business/">Get started with Business</a></li></ol>
+    </nav>
+</div></div>
+    </div>
+</nav>
+
+    </header>
+    <div class="wrapper right-open">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-body">
+                    <main class="col-content content">
+                        <section class="section"><h1>Get started onboarding with Docker Business</h1><p><em class="reading-time">Estimated reading time: 14 minutes</em></p><p>The following section contains step-by-step instructions on how to get started onboarding your organization after you obtain a Docker Business subscription.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you start to on board your organization, ensure that you’ve completed the following:</p>
+<ul>
+  <li>You have a Docker Business subscription. <a href="https://www.docker.com/pricing/contact-sales/">Get in touch with us</a> if you haven’t subscribed to Docker Business yet.</li>
+  <li>Your Docker Business subscription is new. If you upgraded your Docker Team subscription or renewed your Docker Business subscription, see <a href="#whats-next">what’s next</a>.</li>
+  <li>Your Docker Business subscription has started. You cannot complete all the steps until after your subscription start date.</li>
+  <li>You are familiar with Docker terminology. If you discover any unfamiliar terms, see the <a href="/glossary/#docker">glossary</a> or <a href="/docker-hub/onboarding-faqs/">FAQs</a>.</li>
+</ul>
+
+<h2 id="step-1-identify-your-docker-users-and-their-docker-accounts">Step 1: Identify your Docker users and their Docker accounts</h2>
+
+<p>To begin, you should identify which users you will need to add to your Docker Business organization. Identifying your users will help you efficiently allocate your subscription’s seats and manage access.</p>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>If you will use Docker Single Sign-on (SSO), users from your identity provider (IdP) are automatically provisioned in your organization when they sign in. You can identify which users have signed in to Docker Hub by viewing your organization’s members in Docker Hub. You can also perform the steps below to identify users before you configure SSO.</p>
+</blockquote>
+
+<ol>
+  <li>Identify the Docker users in your organization.
+    <ul>
+      <li>If your organization uses device management software, like MDM or JAMF, you may use the device management software to help identify Docker users. See your device management software’s documentation for details. You can identify Docker users by checking if Docker Desktop is installed at the following location on each user’s machine:
+        <ul>
+          <li>Mac: <code class="language-plaintext highlighter-rouge">/Applications/Docker.app</code></li>
+          <li>Windows: <code class="language-plaintext highlighter-rouge">C:\Program Files\Docker\Docker</code></li>
+        </ul>
+      </li>
+      <li>If your organization does not use device management software, you may survey your users.</li>
+    </ul>
+  </li>
+  <li>Instruct all your Docker users in your organization to update their existing Docker account’s email address to an address that’s in your organization’s domain, or to create a new account using an email address in your organization’s domain.
+    <ul>
+      <li>To update an account’s email address, instruct your users to sign in to <a href="https://hub.docker.com" target="_blank" rel="noopener" class="_">Docker Hub</a>, go to <a href="https://hub.docker.com/settings/general" target="_blank" rel="noopener" class="_">Account Settings</a>, and update the email address to their email address in your organization’s domain.</li>
+      <li>To create a new account, instruct your users to go <a href="https://hub.docker.com/signup" target="_blank" rel="noopener" class="_">sign up</a> using their email address in your organization’s domain.</li>
+    </ul>
+  </li>
+  <li>Ask your Docker sales representative to provide a list of Docker accounts that use an email address in your organization’s domain.</li>
+</ol>
+
+<h2 id="step-2-add-your-docker-business-subscription-to-an-organization">Step 2: Add your Docker Business subscription to an organization</h2>
+
+<p>On the day that your Docker Business subscription starts, your organization’s primary contact will receive a welcome email from Docker to guide you through creating a new organization or to let you choose an existing organization for your Docker Business subscription.</p>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>If your organization’s primary contact does not receive a welcome email from Docker on the day that your subscription starts:</p>
+  <ul>
+    <li>Check your email spam folder.</li>
+    <li>Use the steps below to verify that your Docker Business organization does not already exist.</li>
+    <li>Contact your Docker sales representative to verify your primary contact’s email address.</li>
+  </ul>
+</blockquote>
+
+<p>After completing the steps from the welcome email, verify that your organization exists and your organization has a Docker Business subscription:</p>
+
+<ol>
+  <li>Go to <a href="https://hub.docker.com/billing" target="_blank" rel="noopener" class="_">Billing Details</a> and then select on your organization’s name.</li>
+  <li>Under <strong>Plan</strong>, view your subscription. If you organization has a Docker Business subscription, you will see <strong>Docker Business</strong>.</li>
+</ol>
+
+<h2 id="step-3-add-members">Step 3: Add members</h2>
+
+<p>Now that you have a Docker Business organization, it’s time to start adding members. You can automatically add members to your organization by configuring Docker Single Sign-on (SSO), or invite members based their email address or Docker ID.</p>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>If you are not ready to configure SSO, you can invite members using their email address or Docker ID and then configure SSO at a later time. Any members you invite by email address or Docker ID can continue to have access after configuring SSO.</p>
+
+  <p>In addition, when SSO is configured, you can still invite members not in your identity provider (IdP) by using their email address or Docker ID.</p>
+</blockquote>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" data-target="#sso-configure">Configure Single Sign-on</a></li>
+  <li><a data-toggle="tab" data-target="#invite-member">Invite members</a></li>
+</ul>
+<div class="tab-content">
+  <div id="sso-configure" class="tab-pane fade in active">
+
+    <h3 id="configure-single-sign-on">Configure Single Sign-on</h3>
+
+    <p>The following steps will help you quickly set up SSO. For more details, see <a href="/single-sign-on/" target="_blank" rel="noopener" class="_">Configure Single Sign-on</a> and <a href="/single-sign-on/faqs/" target="_blank" rel="noopener" class="_">Single Sign-on FAQs</a>.</p>
+
+    <ol>
+      <li>Ensure that all members have at least <a href="/desktop/#download-and-install" target="_blank" rel="noopener" class="_">Docker Desktop</a> 4.4.2 installed on their machines.</li>
+      <li>If you have existing Docker CI/CD pipelines in your organization, replace their passwords with Personal Access Tokens.
+See <a href="/single-sign-on/#create-a-personal-access-token-pat" target="_blank" rel="noopener" class="_">Create a Personal Access (PAT)</a> for more details.</li>
+      <li>
+        <p>Configure either your SAML 2.0 identity provider (IdP) or your Azure AD IdP with Open ID Connect.</p>
+
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" data-target="#saml">SAML 2.0 IdP configuration</a></li>
+          <li><a data-toggle="tab" data-target="#azure-ad">Azure AD IdP configuration with Open ID Connect</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="saml" class="tab-pane fade in active">
+
+            <ol>
+              <li>Sign in to <a href="https://hub.docker.com" target="_blank" rel="noopener" class="_">Docker Hub</a> as an administrator and navigate to <strong>Organizations</strong> and select the organization that you want to enable SSO on.</li>
+              <li>Select <strong>Settings</strong> and select the <strong>Security</strong> tab.</li>
+              <li>Select an authentication method for SAML 2.0.</li>
+              <li>In the Identity Provider Set Up, copy the <strong>Entity ID</strong>, <strong>ACS URL</strong> and <strong>Certificate Download URL</strong>.</li>
+              <li>
+                <p>Log in to your IdP to complete the IdP server configuration process. Refer to your IdP documentation for detailed instructions.</p>
+
+                <blockquote>
+                  <p><strong>Note</strong></p>
+
+                  <p>The NameID is your email address and is set as the default. For example, yourname@mycompany.com. We also support the optional name attribute. This attribute name must be lower-cased. The following is an example of this attribute in Okta.</p>
+                </blockquote>
+              </li>
+              <li>Complete the fields in the <strong>Configuration Settings</strong> section and select <strong>Save</strong>. If you want to change your IdP, you must delete your existing provider and configure SSO with your new IdP.</li>
+            </ol>
+
+          </div>
+          <div id="azure-ad" class="tab-pane fade">
+
+            <blockquote>
+              <p><strong>Note</strong></p>
+
+              <p>This section is for users who only want to configure Open ID Connect with Azure AD. This connection is a basic OIDC connection, and there are no special customizations available when using it.</p>
+            </blockquote>
+
+            <ol>
+              <li>Sign in to <a href="https://hub.docker.com" target="_blank" rel="noopener" class="_">Docker Hub</a> as an administrator and navigate to <strong>Organizations</strong> and select the organization that you want to enable SSO on.</li>
+              <li>Select <strong>Settings</strong> and select the <strong>Security</strong> tab.</li>
+              <li>Select an authentication method for Azure AD.</li>
+              <li>In the Identity Provider Set Up, copy the <strong>Redirect URL / Reply URL</strong>.</li>
+              <li>
+                <p>Log in to your IdP to complete the IdP server configuration process. Refer to your IdP documentation for detailed instructions.</p>
+
+                <blockquote>
+                  <p><strong>Note</strong></p>
+
+                  <p>The NameID is your email address and is set as the default. For example: yourname@mycompany.com.</p>
+                </blockquote>
+              </li>
+              <li>Complete the fields in the Configuration Settings section and select <strong>Save</strong>. If you want to change your IdP, you must delete your existing provider and configure SSO with your new IdP.</li>
+            </ol>
+
+          </div>
+        </div>
+      </li>
+      <li>
+        <p>Select <strong>Add Domain</strong> and specify the corporate domain you’d like to manage with SSO. Domains should be formatted without protocol or www information, for example, yourcompany.com. Docker currently supports multiple domains that are part of your IdP. Make sure that your domain is reachable through email.</p>
+
+        <blockquote>
+          <p><strong>Note</strong></p>
+
+          <p>This should include all email domains and sub-domains users will use to access Docker. Public domains such as gmail.com and outlook.com are not permitted. Also, the email domain should be set as the primary email.</p>
+        </blockquote>
+      </li>
+      <li>Perform the following steps to verify ownership of your domain by adding a TXT record to your Domain Name System (DNS) setting.
+        <ol>
+          <li>Copy the provided <strong>TXT record value</strong> and navigate to your DNS host and locate the <strong>Settings</strong> page to add a new record.</li>
+          <li>
+            <p>Select the option to add a new record and paste the TXT record value into the applicable field. For example, the <strong>Value</strong>, <strong>Answer</strong> or <strong>Description</strong> field.</p>
+
+            <p>Your DNS record may have the following fields:</p>
+
+            <ul>
+              <li>Record type: enter your ‘TXT’ record value</li>
+              <li>Name/Host/Alias: leave the default (@ or blank)</li>
+              <li>Time to live (TTL): enter <strong>86400</strong></li>
+            </ul>
+          </li>
+          <li>
+            <p>After you have updated the fields, select <strong>Save</strong>.</p>
+
+            <blockquote>
+              <p><strong>Note</strong></p>
+
+              <p>It can take up to 72 hours for DNS changes to take effect, depending on your DNS host. The Domains table will have an Unverified status during this time.</p>
+            </blockquote>
+          </li>
+          <li>In the Security section of your Docker organization, select <strong>Verify</strong> next to the domain you want to verify after 72 hours.</li>
+        </ol>
+      </li>
+      <li>Perform the following to verify that SSO has been configured successfully.
+        <ol>
+          <li>Open an incognito browser.</li>
+          <li>Navigate to <a href="https://hub.docker.com" target="_blank" rel="noopener" class="_">Docker Hub</a>.</li>
+          <li>Authenticate through email instead of using your Docker ID. If you are able to authenticate, then SSO has been configured successfully.</li>
+        </ol>
+      </li>
+      <li>To access Docker Hub through the CLI, each member of your organization must create a Personal Access Token. See <a href="/docker-hub/access-tokens/#create-an-access-token" target="_blank" rel="noopener" class="_">Create an access token</a> for details.</li>
+      <li>Perform the following to force users to sign in to Docker Hub using SSO.
+        <ol>
+          <li>In <a href="https://hub.docker.com" target="_blank" rel="noopener" class="_">Docker Hub</a>, select <strong>Organizations</strong>, select your organization, select <strong>Settings</strong>, and then select the <strong>Security</strong> tab.</li>
+          <li>Select <strong>Turn ON Enforcement</strong>.</li>
+        </ol>
+      </li>
+    </ol>
+
+  </div>
+  <div id="invite-member" class="tab-pane fade">
+
+    <h3 id="invite-members">Invite members</h3>
+
+    <p>All members in your organization need to be in at least one team. Teams are used to apply access control permissions to image repositories and organization settings.</p>
+
+    <p>Your organization will have at least one default team, the <strong>owners</strong> team, with at least a single member (you). Members of the <strong>owners</strong> team can help manage users, teams, and repositories in the organization. <a href="/docker-hub/orgs/#the-owners-team" target="_blank" rel="noopener" class="_">Learn more</a>.</p>
+
+    <p>In the steps below, you will create a <strong>members</strong> team. Members that you invite to the <strong>members</strong> team will not be able to modify your organization settings.</p>
+
+    <p>To create the <strong>members</strong> team:</p>
+
+    <ol>
+      <li>Select <strong>Organizations</strong> in <a href="https://hub.docker.com" target="_blank" rel="noopener" class="_">Docker Hub</a> and then select your organization.</li>
+      <li>Click <strong>Teams</strong> and then click <strong>Create Team</strong>.</li>
+      <li>Specify <code class="language-plaintext highlighter-rouge">members</code> for <strong>Team name</strong> and then click <strong>Create</strong>.</li>
+    </ol>
+
+    <p>To invite a member to the <strong>members</strong> team in your organization:</p>
+
+    <ol>
+      <li>Navigate to <strong>Organizations</strong> in Docker Hub, and select your organization.</li>
+      <li>In the <strong>Members</strong> tab, click <strong>Invite Member</strong>.</li>
+      <li>Enter the invitee’s Docker ID or email, and select the <strong>members</strong> team from the drop-down list.</li>
+      <li>Click <strong>Invite</strong> to confirm.</li>
+    </ol>
+
+  </div>
+</div>
+
+<h2 id="step-4-enforce-sign-in-for-docker-desktop">Step 4: Enforce sign in for Docker Desktop</h2>
+
+<p>By default, members of your organization can use Docker Desktop on their machines without signing in to any Docker account. To ensure that a user signs in to a Docker account that is a member of your organization and that the
+organization’s settings apply to the user’s session, you can use a <code class="language-plaintext highlighter-rouge">registry.json</code> file.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">registry.json</code> file is a configuration file that allows administrators to specify the Docker organization the user must belong to and ensure that the organization’s settings apply to the user’s session. The Docker Desktop installer can create this file on the users’ machines as part of the installation process.</p>
+
+<p>After a <code class="language-plaintext highlighter-rouge">registry.json</code> file is configured on a user’s machine, Docker Desktop prompts the user to sign in. If a user doesn’t sign in, or tries to sign in using a different organization, other than the organization listed in the <code class="language-plaintext highlighter-rouge">registry.json</code> file, they will be denied access to Docker Desktop.</p>
+
+<p>Deploying a <code class="language-plaintext highlighter-rouge">registry.json</code> file and forcing users to authenticate is not required, but offers the following benefits:</p>
+
+<ul>
+  <li>Allows administrators to configure features such as <a href="/docker-hub/image-access-management/">Image Access Management</a> which allows team members to:
+    <ul>
+      <li>Only have access to Trusted Content on Docker Hub</li>
+      <li>Pull only from the specified categories of images</li>
+    </ul>
+  </li>
+  <li>Authenticated users get a higher pull rate limit compared to anonymous users. For example, if you are authenticated, you get 200 pulls per 6 hour period, compared to 100 pulls per 6 hour period per IP address for anonymous users. For more information, see <a href="/docker-hub/download-rate-limit/">Download rate limit</a>.</li>
+  <li>Blocks users from accessing Docker Desktop until they are added to a specific organization.</li>
+</ul>
+
+<h3 id="create-a-registryjson-file">Create a registry.json file</h3>
+
+<p>Before creating a <code class="language-plaintext highlighter-rouge">registry.json</code> file, ensure that the user is a member of
+your organization in Docker Hub.</p>
+
+<p>Based on the user’s operating system, you must create a <code class="language-plaintext highlighter-rouge">registry.json</code> file at the following location and ensure that the file can’t be edited by the user:</p>
+<ul>
+  <li>Windows: <code class="language-plaintext highlighter-rouge">/ProgramData/DockerDesktop/registry.json</code></li>
+  <li>Mac: <code class="language-plaintext highlighter-rouge">/Library/Application Support/com.docker.docker/registry.json</code></li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">registry.json</code> file must contain the following contents, where <code class="language-plaintext highlighter-rouge">myorg</code> is replaced with your organization’s name.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"allowedOrgs"</span><span class="p">:[</span><span class="s2">"myorg"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>You can use the following methods to create a <code class="language-plaintext highlighter-rouge">registry.json</code> file based on the user’s operating system.</p>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" data-target="#windows">Windows</a></li>
+  <li><a data-toggle="tab" data-target="#mac">Mac</a></li>
+</ul>
+<div class="tab-content">
+  <div id="windows" class="tab-pane fade in active">
+
+    <h4 id="windows">Windows</h4>
+
+    <p>On Windows, you can use the following methods to create a <code class="language-plaintext highlighter-rouge">registry.json</code> file.</p>
+
+    <h5 id="create-registryjson-when-installing-docker-desktop-on-windows">Create registry.json when installing Docker Desktop on Windows</h5>
+
+    <p>To automatically create a <code class="language-plaintext highlighter-rouge">registry.json</code> file when installing Docker Desktop, download <code class="language-plaintext highlighter-rouge">Docker Desktop Installer.exe</code> and run one of the following commands from the directory containing <code class="language-plaintext highlighter-rouge">Docker Desktop Installer.exe</code>. Replace <code class="language-plaintext highlighter-rouge">myorg</code> with your organization’s name.</p>
+
+    <p>If you’re using PowerShell:</p>
+
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">Start-Process</span><span class="w"> </span><span class="s1">'.\Docker Desktop Installer.exe'</span><span class="w"> </span><span class="nt">-Wait</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nt">--allowed-org</span><span class="o">=</span><span class="n">myorg</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p>If you’re using the Windows Command Prompt:</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\Admin&gt;</span><span class="w"> </span><span class="s2">"Docker Desktop Installer.exe"</span> <span class="nb">install</span> <span class="nt">--allowed-org</span><span class="o">=</span>myorg
+</code></pre></div>    </div>
+
+    <h5 id="create-registryjson-manually-on-windows">Create registry.json manually on Windows</h5>
+
+    <p>To manually create a <code class="language-plaintext highlighter-rouge">registry.json</code> file, run the following PowerShell command as an Admin and replace <code class="language-plaintext highlighter-rouge">myorg</code> with your organization’s name:</p>
+
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="err">&gt;</span><span class="w">  </span><span class="nx">Set-Content</span><span class="w"> </span><span class="nx">/ProgramData/DockerDesktop/registry.json</span><span class="w"> </span><span class="s1">'{"allowedOrgs":["myorg"]}'</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <p>This creates the <code class="language-plaintext highlighter-rouge">registry.json</code> file at <code class="language-plaintext highlighter-rouge">C:\ProgramData\DockerDesktop\registry.json</code> and includes the organization information the user belongs to. Make sure this file can’t be edited by the user, only by the administrator.</p>
+
+  </div>
+  <div id="mac" class="tab-pane fade">
+
+    <h4 id="mac">Mac</h4>
+
+    <p>On Mac, you can use the following methods to create a <code class="language-plaintext highlighter-rouge">registry.json</code> file.</p>
+
+    <h5 id="create-registryjson-when-installing-docker-desktop-on-mac">Create registry.json when installing Docker Desktop on Mac</h5>
+
+    <p>To automatically create a registry.json file when installing Docker Desktop, download <code class="language-plaintext highlighter-rouge">Docker.dmg</code> and run the following commands in a terminal from the directory containing <code class="language-plaintext highlighter-rouge">Docker.dmg</code>. Replace <code class="language-plaintext highlighter-rouge">myorg</code> with your organization’s name.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>hdiutil attach Docker.dmg 
+<span class="nv">$ </span><span class="nb">sudo</span> /Volumes/Docker/Docker.app/Contents/MacOS/install <span class="nt">--allowed-org</span><span class="o">=</span>myorg
+<span class="nv">$ </span><span class="nb">sudo </span>hdiutil detach /Volumes/Docker
+</code></pre></div>    </div>
+
+    <h5 id="create-registryjson-manually-on-mac">Create registry.json manually on Mac</h5>
+
+    <p>To manually create a <code class="language-plaintext highlighter-rouge">registry.json</code> file, run the following commands in a terminal and replace <code class="language-plaintext highlighter-rouge">myorg</code> with your organization’s name.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo touch</span> /Library/Application Support/com.docker.docker/registry.json
+<span class="nv">$ </span><span class="nb">sudo echo</span> <span class="s1">'{"allowedOrgs":["myorg"]}'</span> <span class="o">&gt;&gt;</span> /Library/Application Support/com.docker.docker/registry.json
+</code></pre></div>    </div>
+
+    <p>This creates the <code class="language-plaintext highlighter-rouge">registry.json</code> file at <code class="language-plaintext highlighter-rouge">/Library/Application Support/com.docker.docker/registry.json</code> and includes the organization information the user belongs to. Make sure this file can’t be edited by the user, only by the administrator.</p>
+
+  </div>
+</div>
+
+<h2 id="whats-next">What’s next</h2>
+
+<p>Get the most out of your Docker Business subscription by leveraging these popular features:</p>
+
+<ul>
+  <li>If you haven’t configured <a href="/single-sign-on/">Docker Single Sign-on</a> yet, configure it now for centralized account management.</li>
+  <li>Create <a href="/docker-hub/repos/">repositories</a> to share container images.</li>
+  <li>Create <a href="/docker-hub/orgs/#create-a-team">teams</a> and configure <a href="/docker-hub/orgs/#configure-repository-permissions">repository permissions</a>.</li>
+  <li>Control which images your members can access with <a href="/docker-hub/image-access-management/">Image Access Management</a>.</li>
+  <li>Control which registries your members can access with <a href="/docker-hub/registry-access-management/">Registry Access Management</a>.</li>
+</ul>
+
+<p>Your Docker Business subscription provides many more additional features. <a href="/subscription/">Learn more</a>.</p>
+<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="/search/?q=business">business</a>, <a href="/search/?q=organizations">organizations</a>, <a href="/search/?q=get started">get started</a>, <a href="/search/?q=onboarding">onboarding</a></span></section>
+                    </main>
+                    <nav class="col-nav">
+                        <div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+                            <div id="navbar" class="nav-sidebar">
+                                <ul class="nav hidden-md hidden-lg"></ul>
+                                <ul class="nav" id="jsTOCLeftNav"></ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="col-toc">
+                        <div class="sidebar hidden-xs hidden-sm">
+                            <div class="toc-nav">
+                                <div class="feedback-links">
+                                    <ul><li><a href="https://github.com/docker/docker.github.io/edit/master/docker-hub/onboard-business.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li><li><a href="https://github.com/docker/docker.github.io/issues/new?body=File: [docker-hub/onboard-business.md](https://docs.docker.com/docker-hub/onboard-business/)" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li><li><div class="toggle-mode">
+  <div class="icon">
+      <i class="fa fa-sun-o" aria-hidden="true"></i>
+  </div>
+  <div class="toggle-switch">
+      <label class="switch">
+          <input type="checkbox" id="switch-style">
+          <span class="slider round"></span>
+      </label>
+  </div>
+  <div class="icon">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </div>
+</div>
+</li>
+                                    </ul>
+                                </div><div id="side-toc-title">On this page:</div>
+<ul id="my_toc" class="inline_toc">
+  <li><a href="#prerequisites" class="nomunge">Prerequisites</a>
+    <ul>
+      <li><a href="#step-1-identify-your-docker-users-and-their-docker-accounts" class="nomunge">Step 1: Identify your Docker users and their Docker accounts</a></li>
+      <li><a href="#step-2-add-your-docker-business-subscription-to-an-organization" class="nomunge">Step 2: Add your Docker Business subscription to an organization</a></li>
+      <li><a href="#step-3-add-members" class="nomunge">Step 3: Add members</a></li>
+      <li><a href="#step-4-enforce-sign-in-for-docker-desktop" class="nomunge">Step 4: Enforce sign in for Docker Desktop</a></li>
+      <li><a href="#whats-next" class="nomunge">What’s next</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+          
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products" target="_blank" rel="noopener">Product offerings</a></b></li>
+                        <li><a href="https://www.docker.com/products/personal" target="_blank" rel="noopener">Docker Personal</a></li>
+                        <li><a href="https://www.docker.com/products/pro" target="_blank" rel="noopener">Docker Pro</a></li>
+                        <li><a href="https://www.docker.com/products/team" target="_blank" rel="noopener">Docker Team</a></li>
+                        <li><a href="https://www.docker.com/products/business" target="_blank" rel="noopener">Docker Business</a></li>
+                        <li><a href="https://www.docker.com/products" target="_blank" rel="noopener">Compare Subscriptions</a></li>
+                        <li><b><a href="https://www.docker.com/" target="_blank" rel="noopener">Features</a></b></li>
+                        <li><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a></li>
+                        <li><a href="https://www.docker.com/products/docker-hub" target="_blank" rel="noopener">Docker Hub</a></li>
+                        <li><a href="https://www.docker.com/products/secure-software-supply-chain" target="_blank" rel="noopener">Secure Software Supply Chain</a></li>
+                        <li><a href="https://www.docker.com/products/container-runtime" target="_blank" rel="noopener">Container Runtime</a></li>
+                        <li><a href="https://www.docker.com/products/developer-tools" target="_blank" rel="noopener">Developer Tools</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Trusted Content</a></li>
+                        <li><a href="https://www.docker.com/roadmap" target="_blank" rel="noopener">Docker Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Developers</a></b></li>
+                        <li><a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">Use Cases</a></li>
+                        <li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Get Started</a></li>
+                        <li><a href="https://www.docker.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://www.docker.com/docker-community" target="_blank" rel="noopener">Community</a></li>
+                        <li><a href="https://www.docker.com/open-source" target="_blank" rel="noopener">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/get-involved/developer-preview" target="_blank" rel="noopener">Preview Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Pricing</a></b></li>
+                        <li><a href="https://www.docker.com/pricing/faq" target="_blank" rel="noopener">FAQ</a></li>
+                        <li><a href="https://www.docker.com/partners/programs" target="_blank" rel="noopener">Docker Verified Publisher</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/company" target="_blank" rel="noopener">About Us</a></b></li>
+                        <li><a href="https://www.docker.com/what-container" target="_blank" rel="noopener">What is a Container?</a></li>
+                        <li><a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">Why Docker?</a></li>
+                        <li><a href="https://www.docker.com/events" target="_blank" rel="noopener">Virtual Events</a></li>
+                        <li><a href="https://www.docker.com/swag" target="_blank" rel="noopener">Swag Store
+                        </a></li>
+                        <li><a href="https://www.docker.com/company/newsroom" target="_blank" rel="noopener">Newsroom</a></li>
+                        <li><a href="https://www.docker.com/careers" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.docker.com/company/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.docker.com/customers" target="_blank" rel="noopener">Customers</a></li>
+                        <li><a href="https://www.docker.com/newsletter-subscription" target="_blank" rel="noopener">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="https://www.docker.com/legal/docker-terms-service" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="https://status.docker.com/" target="_blank" rel="noopener">Status</a></li>
+                        <li><a href="https://www.docker.com/legal" target="_blank" rel="noopener">Legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright &copy; 2013-2021 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="https://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="https://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker">GitHub</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-slideshare"><a href="https://www.slideshare.net/docker">Slideshare</a></li>
+                    <li class="fa fa-reddit"><a href="https://www.reddit.com/r/docker">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <script>const pageURL = "/docker-hub/onboard-business/";</script></body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!-- Page generated 2022-07-02 18:47:56 +0000-->
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex"/><title>OAuth 2.0 flow | Docker Documentation</title>
+  <meta name="description" content="Docker extension OAuth 2.0 flow" />
+  <meta name="keywords" content="Docker, extensions, sdk, OAuth 2.0">
+  <link rel="canonical" href="https://localhost:4000/desktop/extensions-sdk/dev/oauth2-flow/" />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <link rel="apple-touch-icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+  <meta property="og:image" content="/favicons/docs@2x.ico"/>
+  <meta name="theme-color" content="#2496ed" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- hide elements that are only shown without JavaScript enabled -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>html.js .no-js { display: none !important; }</style><script defer src="/js/theme-switcher.js"></script>
+  <script defer src="/js/anchorlinks.js"></script>
+  <script defer src="/js/jquery.js"></script>
+  <script defer src="/js/bootstrap.min.js"></script>
+  <script defer src="/js/docs.js"></script><link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Book.woff2"    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/glyphicons-halflings-regular.woff2"       type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/fontawesome-webfont.woff2?v=4.7.0"        type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" id="pagestyle">
+
+  <!-- SEO stuff -->
+  <meta name="twitter:title" itemprop="title name" content="OAuth 2.0 flow"/>
+  <meta name="twitter:description" property="og:description" itemprop="description" content="" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:domain" content="docs.docker.com"/>
+  <meta name="twitter:site" content="@docker_docs"/>
+  <meta name="twitter:url" content="https://twitter.com/docker_docs"/>
+  <meta name="twitter:image:src" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta name="twitter:image:alt" content="Docker Documentation"/>
+  <meta property="og:title" content="OAuth 2.0 flow" />
+  <meta property="og:description" content="Docker extension OAuth 2.0 flow" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:updated_time" itemprop="dateUpdated" content="2022-07-02T18:47:56+00:00"/>
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://docs.docker.com/desktop/extensions-sdk/dev/oauth2-flow/" />
+  <meta property="og:site_name" content="Docker Documentation" />
+  <meta property="article:published_time" itemprop="datePublished" content="2022-07-02T18:47:56+00:00"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"OAuth 2.0 flow","description":"Docker extension OAuth 2.0 flow","url":"https://docs.docker.com/desktop/extensions-sdk/dev/oauth2-flow/"}</script>
+  <!-- END SEO STUFF -->
+</head>
+<body class="colums">
+    <header>
+        <nav class="nav-secondary navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/">
+                <img class="logo" src="/images/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs" width="160" height="28" />
+            </a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="logo-mobile">
+    <a href="/">
+        <img src="/images/docker-icon.svg" alt="Docker Docs" title="Docker Docs" width="30" height="30" />
+    </a>
+</div>
+<div class="search-form" id="search-div">
+    <form class="search-form form-inline" id="searchForm" action="/search/" method="get">
+        <label for="st-search-input" class="sr-only">Search</label>
+        <input class="search-field form-control ds-input" id="st-search-input" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteResults"></div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container hidden-sm hidden-xs">
+    <div>
+        <ul class="nav navbar-nav"><li><a href="/" id="home">Home</a></li><li><a href="/get-started/overview/" id="guides">Guides</a></li><li><a href="/desktop/" id="manuals">Manuals</a></li><li><a href="/reference/" id="reference">Reference</a></li><li><a href="/samples/" id="samples">Samples</a></li></ul>
+    </div>
+    <div class="ctrl-right">
+        <a href="javascript:void(0)" id="menu-toggle" aria-label="Current page's menu toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="row hidden-sm hidden-xs">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li><a href="/" title="Docker docs homepage"><i class="fa fa-home"></i></a></li>
+            <li><a href="/desktop/">Manuals</a></li><li><a href="/desktop/">Docker Desktop</a></li><li><a href="/desktop/extensions-sdk/">Extensions SDK (Beta)</a></li><li><a href="/desktop/extensions-sdk/dev/oauth2-flow/">Developer SDK tools</a></li><li><a href="/desktop/extensions-sdk/dev/oauth2-flow/">Authentication</a></li></ol>
+    </nav>
+</div></div>
+    </div>
+</nav>
+
+    </header>
+    <div class="wrapper right-open">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-body">
+                    <main class="col-content content">
+                        <section class="section"><h1>OAuth 2.0 flow</h1><p><em class="reading-time">Estimated reading time: 4 minutes</em></p><blockquote>
+  <p>Note</p>
+
+  <p>This page assumes that you already have an Identity Provider (IdP), such as Google, Azure AD or Okta, which handles the authentication process and returns an access token.</p>
+</blockquote>
+
+<p>Learn how you can let users authenticate from your Docker Extension using OAuth 2.0 via a web browser, and return them back to your Docker Extension.</p>
+
+<p>In OAuth 2.0, the term “grant type” refers to the way an application gets an access token. Although OAuth 2.0 defines several grant types, this page only describes how to authorize users from your Docker Extension using the Authorization Code grant type.</p>
+
+<h2 id="authorization-code-grant-flow">Authorization Code grant flow</h2>
+
+<p>The Authorization Code grant type is used by confidential and public clients to exchange an authorization code for an access token.</p>
+
+<p>After the user returns to the client via the redirect URL, the application gets the authorization code from the URL and uses it to request an access token.</p>
+
+<p><img src="/desktop/extensions-sdk/dev/images/oauth2-flow.png" alt="oauth2-flow" /></p>
+
+<p>The image above shows that:</p>
+<ul>
+  <li>The Docker Extension asks the user to authorize access to their data.</li>
+  <li>If the user grants access, the Docker Extension then requests an access token from the service provider, passing the access grant from the user and authentication details to identify the client.</li>
+  <li>The service provider then validates these details and returns an access token.</li>
+  <li>The Docker Extension uses the access token to request the user data with the service provider.</li>
+</ul>
+
+<h3 id="oauth-20-terminology">OAuth 2.0 terminology</h3>
+
+<ul>
+  <li>Auth URL: The endpoint for the API provider authorization server, to retrieve the auth code.</li>
+  <li>Redirect URI: The client application callback URL to redirect to after auth. This must be registered with the API provider.</li>
+</ul>
+
+<p>Once the user enters the username and password, they are successfully authenticated.</p>
+
+<h2 id="step-one-open-a-browser-page-to-authenticate-the-user">Step One: Open a browser page to authenticate the user</h2>
+
+<p>From the extension UI, you can provide a button that, when selected, opens a new window in a browser to authenticate the user.</p>
+
+<p>Use the <a href="/desktop/extensions-sdk/dev/api/dashboard/#open-a-url">ddClient.host.openExternal</a> API to open a browser to the auth URL. For example:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">openExternal</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://authorization-server.com/authorize?
+  response_type=code
+  &amp;client_id=T70hJ3ls5VTYG8ylX3CZsfIu
+  &amp;redirect_uri=${REDIRECT_URI}
+  &amp;scope=photo+offline_access
+  &amp;state=kH_0FdAtjCfYjOkF);
+</span></code></pre></div></div>
+
+<h2 id="step-two-get-the-authorization-code-and-access-token">Step Two: Get the authorization code and access token</h2>
+
+<h3 id="from-the-extension-ui">From the extension UI</h3>
+
+<blockquote class="important">
+  <p><strong>Passing the access token</strong></p>
+
+  <p>Currently, passing the authorization code as a query parameter to the <code class="language-plaintext highlighter-rouge">docker-desktop://dashboard/open</code> URL is not supported.</p>
+</blockquote>
+
+<p>You cannot get the authorization code from the extension UI by listing <code class="language-plaintext highlighter-rouge">docker-desktop://dashboard/open</code> as the <code class="language-plaintext highlighter-rouge">redirect_uri</code> in the OAuth app you’re using and concatenating the authorization code as a query parameter.</p>
+
+<p>See <a href="#from-a-backend-service">from backend service</a> instead.</p>
+
+<h3 id="from-a-backend-service">From a backend service</h3>
+
+<p>You need a backend service running as part of your extension to handle the OAuth 2.0 flow. For this, you must ensure the Redirect URI is registered with the API provider to redirect to that location after OAuth has completed, e.g. <code class="language-plaintext highlighter-rouge">http://localhost:8080/callback</code>.</p>
+
+<p>The default communication is socket-based. The backend service needs to expose the port in order for the browser to connect to it.</p>
+
+<h4 id="authorization">Authorization</h4>
+
+<p>This step is where the user enters their credentials in the browser. After the authorization is complete, the user is redirected back to your backend service, and you’ll consume the authorization code that is part of the query parameters in the URL.</p>
+
+<p>How you consume the query parameters depends on the technology that is used by the backend service.</p>
+
+<h4 id="exchange-the-authorization-code">Exchange the Authorization Code</h4>
+
+<p>Next, you exchange the authorization code for an access token.</p>
+
+<p>The backend service must build a <code class="language-plaintext highlighter-rouge">POST</code> request to the token endpoint with the following parameters:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST https://authorization-server.com/token
+
+grant_type=authorization_code
+&amp;client_id=T70hJ3ls5VTYG8ylX3CZsfIu
+&amp;client_secret=YABbyHQShPeO1T3NDQZP8q5m3Jpb_UPNmIzqhLDCScSnRyVG
+&amp;redirect_uri=${REDIRECT_URI}
+&amp;code=N949tDLuf9ai_DaOKyuFBXStCNMQzuQbtC1QbvLv-AXqPJ_f
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>The client’s credentials are included in the <code class="language-plaintext highlighter-rouge">POST</code> body in this example. Other authorization servers may require that the credentials are sent as a HTTP Basic Authentication header.</p>
+</blockquote>
+
+<h4 id="token-endpoint-response">Token Endpoint Response</h4>
+
+<p>Finally, you can read the access token from the HTTP response and pass it to the extension UI by having the browser after OAuth be redirected to the backend service. The backend service, in turn, has to explicitly redirect the browser to <code class="language-plaintext highlighter-rouge">docker-desktop://dashboard/open</code>.</p>
+
+<h2 id="step-three-store-the-access-token">Step three: Store the access token</h2>
+
+<p>The Docker Extensions SDK does not currently provide a mechanism to safely store secrets.</p>
+
+<p>It is highly recommended that you use an external source of storage to store the access token.</p>
+
+<blockquote class="warning">
+  <p>Warning</p>
+
+  <p>Storing the access token in a client’s localStorage is a security risk as that storage is currently shared amongst all extensions.</p>
+</blockquote>
+
+<h2 id="whats-next">What’s next</h2>
+<p>Learn how to <a href="/desktop/extensions-sdk/extensions/">publish and distribute your extension</a></p>
+<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="/search/?q=Docker">Docker</a>, <a href="/search/?q=extensions">extensions</a>, <a href="/search/?q=sdk">sdk</a>, <a href="/search/?q=OAuth 2.0">OAuth 2.0</a></span></section>
+                    </main>
+                    <nav class="col-nav">
+                        <div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+                            <div id="navbar" class="nav-sidebar">
+                                <ul class="nav hidden-md hidden-lg"></ul>
+                                <ul class="nav" id="jsTOCLeftNav"></ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="col-toc">
+                        <div class="sidebar hidden-xs hidden-sm">
+                            <div class="toc-nav">
+                                <div class="feedback-links">
+                                    <ul><li><a href="https://github.com/docker/docker.github.io/edit/master/desktop/extensions-sdk/dev/oauth2-flow.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li><li><a href="https://github.com/docker/docker.github.io/issues/new?body=File: [desktop/extensions-sdk/dev/oauth2-flow.md](https://docs.docker.com/desktop/extensions-sdk/dev/oauth2-flow/)" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li><li><div class="toggle-mode">
+  <div class="icon">
+      <i class="fa fa-sun-o" aria-hidden="true"></i>
+  </div>
+  <div class="toggle-switch">
+      <label class="switch">
+          <input type="checkbox" id="switch-style">
+          <span class="slider round"></span>
+      </label>
+  </div>
+  <div class="icon">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </div>
+</div>
+</li>
+                                    </ul>
+                                </div><div id="side-toc-title">On this page:</div>
+<ul id="my_toc" class="inline_toc">
+  <li><a href="#authorization-code-grant-flow" class="nomunge">Authorization Code grant flow</a>
+    <ul>
+      <li><a href="#oauth-20-terminology" class="nomunge">OAuth 2.0 terminology</a></li>
+    </ul>
+  </li>
+  <li><a href="#step-one-open-a-browser-page-to-authenticate-the-user" class="nomunge">Step One: Open a browser page to authenticate the user</a></li>
+  <li><a href="#step-two-get-the-authorization-code-and-access-token" class="nomunge">Step Two: Get the authorization code and access token</a>
+    <ul>
+      <li><a href="#from-the-extension-ui" class="nomunge">From the extension UI</a></li>
+      <li><a href="#from-a-backend-service" class="nomunge">From a backend service</a>
+        <ul>
+          <li><a href="#authorization" class="nomunge">Authorization</a></li>
+          <li><a href="#exchange-the-authorization-code" class="nomunge">Exchange the Authorization Code</a></li>
+          <li><a href="#token-endpoint-response" class="nomunge">Token Endpoint Response</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#step-three-store-the-access-token" class="nomunge">Step three: Store the access token</a></li>
+  <li><a href="#whats-next" class="nomunge">What’s next</a></li>
+</ul>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+          
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products" target="_blank" rel="noopener">Product offerings</a></b></li>
+                        <li><a href="https://www.docker.com/products/personal" target="_blank" rel="noopener">Docker Personal</a></li>
+                        <li><a href="https://www.docker.com/products/pro" target="_blank" rel="noopener">Docker Pro</a></li>
+                        <li><a href="https://www.docker.com/products/team" target="_blank" rel="noopener">Docker Team</a></li>
+                        <li><a href="https://www.docker.com/products/business" target="_blank" rel="noopener">Docker Business</a></li>
+                        <li><a href="https://www.docker.com/products" target="_blank" rel="noopener">Compare Subscriptions</a></li>
+                        <li><b><a href="https://www.docker.com/" target="_blank" rel="noopener">Features</a></b></li>
+                        <li><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a></li>
+                        <li><a href="https://www.docker.com/products/docker-hub" target="_blank" rel="noopener">Docker Hub</a></li>
+                        <li><a href="https://www.docker.com/products/secure-software-supply-chain" target="_blank" rel="noopener">Secure Software Supply Chain</a></li>
+                        <li><a href="https://www.docker.com/products/container-runtime" target="_blank" rel="noopener">Container Runtime</a></li>
+                        <li><a href="https://www.docker.com/products/developer-tools" target="_blank" rel="noopener">Developer Tools</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Trusted Content</a></li>
+                        <li><a href="https://www.docker.com/roadmap" target="_blank" rel="noopener">Docker Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Developers</a></b></li>
+                        <li><a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">Use Cases</a></li>
+                        <li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Get Started</a></li>
+                        <li><a href="https://www.docker.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://www.docker.com/docker-community" target="_blank" rel="noopener">Community</a></li>
+                        <li><a href="https://www.docker.com/open-source" target="_blank" rel="noopener">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/get-involved/developer-preview" target="_blank" rel="noopener">Preview Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Pricing</a></b></li>
+                        <li><a href="https://www.docker.com/pricing/faq" target="_blank" rel="noopener">FAQ</a></li>
+                        <li><a href="https://www.docker.com/partners/programs" target="_blank" rel="noopener">Docker Verified Publisher</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/company" target="_blank" rel="noopener">About Us</a></b></li>
+                        <li><a href="https://www.docker.com/what-container" target="_blank" rel="noopener">What is a Container?</a></li>
+                        <li><a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">Why Docker?</a></li>
+                        <li><a href="https://www.docker.com/events" target="_blank" rel="noopener">Virtual Events</a></li>
+                        <li><a href="https://www.docker.com/swag" target="_blank" rel="noopener">Swag Store
+                        </a></li>
+                        <li><a href="https://www.docker.com/company/newsroom" target="_blank" rel="noopener">Newsroom</a></li>
+                        <li><a href="https://www.docker.com/careers" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.docker.com/company/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.docker.com/customers" target="_blank" rel="noopener">Customers</a></li>
+                        <li><a href="https://www.docker.com/newsletter-subscription" target="_blank" rel="noopener">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="https://www.docker.com/legal/docker-terms-service" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="https://status.docker.com/" target="_blank" rel="noopener">Status</a></li>
+                        <li><a href="https://www.docker.com/legal" target="_blank" rel="noopener">Legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright &copy; 2013-2021 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="https://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="https://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker">GitHub</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-slideshare"><a href="https://www.slideshare.net/docker">Slideshare</a></li>
+                    <li class="fa fa-reddit"><a href="https://www.reddit.com/r/docker">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <script>const pageURL = "/desktop/extensions-sdk/dev/oauth2-flow/";</script></body>
+</html>

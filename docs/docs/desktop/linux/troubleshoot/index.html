@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!-- Page generated 2022-07-02 18:47:56 +0000-->
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex"/><title>Logs and troubleshooting | Docker Documentation</title>
+  <meta name="description" content="Troubleshooting, logs, and known issues" />
+  <meta name="keywords" content="linux, troubleshooting, logs, issues">
+  <link rel="canonical" href="https://localhost:4000/desktop/linux/troubleshoot/" />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <link rel="apple-touch-icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+  <meta property="og:image" content="/favicons/docs@2x.ico"/>
+  <meta name="theme-color" content="#2496ed" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- hide elements that are only shown without JavaScript enabled -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>html.js .no-js { display: none !important; }</style><script defer src="/js/theme-switcher.js"></script>
+  <script defer src="/js/anchorlinks.js"></script>
+  <script defer src="/js/jquery.js"></script>
+  <script defer src="/js/bootstrap.min.js"></script>
+  <script defer src="/js/docs.js"></script><link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Book.woff2"    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/glyphicons-halflings-regular.woff2"       type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/fontawesome-webfont.woff2?v=4.7.0"        type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" id="pagestyle">
+
+  <!-- SEO stuff -->
+  <meta name="twitter:title" itemprop="title name" content="Logs and troubleshooting"/>
+  <meta name="twitter:description" property="og:description" itemprop="description" content="" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:domain" content="docs.docker.com"/>
+  <meta name="twitter:site" content="@docker_docs"/>
+  <meta name="twitter:url" content="https://twitter.com/docker_docs"/>
+  <meta name="twitter:image:src" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta name="twitter:image:alt" content="Docker Documentation"/>
+  <meta property="og:title" content="Logs and troubleshooting" />
+  <meta property="og:description" content="Troubleshooting, logs, and known issues" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:updated_time" itemprop="dateUpdated" content="2022-07-02T18:47:56+00:00"/>
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://docs.docker.com/desktop/linux/troubleshoot/" />
+  <meta property="og:site_name" content="Docker Documentation" />
+  <meta property="article:published_time" itemprop="datePublished" content="2022-07-02T18:47:56+00:00"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Logs and troubleshooting","description":"Troubleshooting, logs, and known issues","url":"https://docs.docker.com/desktop/linux/troubleshoot/"}</script>
+  <!-- END SEO STUFF -->
+</head>
+<body class="colums">
+    <header>
+        <nav class="nav-secondary navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/">
+                <img class="logo" src="/images/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs" width="160" height="28" />
+            </a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="logo-mobile">
+    <a href="/">
+        <img src="/images/docker-icon.svg" alt="Docker Docs" title="Docker Docs" width="30" height="30" />
+    </a>
+</div>
+<div class="search-form" id="search-div">
+    <form class="search-form form-inline" id="searchForm" action="/search/" method="get">
+        <label for="st-search-input" class="sr-only">Search</label>
+        <input class="search-field form-control ds-input" id="st-search-input" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteResults"></div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container hidden-sm hidden-xs">
+    <div>
+        <ul class="nav navbar-nav"><li><a href="/" id="home">Home</a></li><li><a href="/get-started/overview/" id="guides">Guides</a></li><li><a href="/desktop/" id="manuals">Manuals</a></li><li><a href="/reference/" id="reference">Reference</a></li><li><a href="/samples/" id="samples">Samples</a></li></ul>
+    </div>
+    <div class="ctrl-right">
+        <a href="javascript:void(0)" id="menu-toggle" aria-label="Current page's menu toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="row hidden-sm hidden-xs">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li><a href="/" title="Docker docs homepage"><i class="fa fa-home"></i></a></li>
+            <li><a href="/desktop/">Manuals</a></li><li><a href="/desktop/">Docker Desktop</a></li><li><a href="/desktop/linux/install/">Linux</a></li><li><a href="/desktop/linux/troubleshoot/">Logs and troubleshooting</a></li></ol>
+    </nav>
+</div></div>
+    </div>
+</nav>
+
+    </header>
+    <div class="wrapper right-open">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-body">
+                    <main class="col-content content">
+                        <section class="section"><h1>Logs and troubleshooting</h1><p><em class="reading-time">Estimated reading time: 10 minutes</em></p><div class="docker-upgrade-cta" role="alert">
+  <div class="docker-upgrade-cta__heading"></div>
+  <p>Did you know that Docker Desktop offers support for developers on a paid Docker subscription (Pro, Team, or Business)? Upgrade now to benefit from Docker Support. Click <a href="#support">here</a> to learn more.</p>
+ <a class="btn btn-primary" role="button" href="https://www.docker.com/pricing?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=docs_driven_upgrade_desktop_support" target="_blank"> Upgrade now </a>
+</div>
+
+<p>This page contains information on how to diagnose and troubleshoot Docker Desktop issues, request Docker Desktop support, send logs and communicate with the Docker Desktop team, use our forums and Success Center, browse and log issues on GitHub, and find workarounds for known problems.</p>
+
+<h2 id="troubleshoot">Troubleshoot</h2>
+
+<p>Choose <img src="/desktop/linux/images/whale-x.png" alt="whale menu" class="inline" /> &gt; <strong>Troubleshoot</strong>
+from the menu bar to see the troubleshoot options.</p>
+
+<p><img src="/desktop/linux/images/menu/troubleshoot.png" alt="Troubleshoot Docker Desktop" width="600px" /></p>
+
+<p>The Troubleshoot page contains the following options:</p>
+
+<ul>
+  <li>
+    <p><strong>Restart Docker Desktop</strong>: Select to restart Docker Desktop.</p>
+  </li>
+  <li>
+    <p><strong>Support</strong>: Users with a paid Docker subscription can use this option to send a support request. Other users can use this option to diagnose any issues in Docker Desktop. For more information, see <a href="#diagnose-and-feedback">Diagnose and feedback</a> and <a href="#support">Support</a>.</p>
+  </li>
+  <li>
+    <p><strong>Reset Kubernetes cluster</strong>: Select this option to delete all stacks and Kubernetes resources. For more information, see <a href="/desktop/linux/#kubernetes">Kubernetes</a>.</p>
+  </li>
+  <li>
+    <p><strong>Clean / Purge data</strong>: This option resets all Docker data <em>without</em> a
+reset to factory defaults. Selecting this option results in the loss of existing settings.</p>
+  </li>
+  <li>
+    <p><strong>Reset to factory defaults</strong>: Choose this option to reset all options on
+Docker Desktop to their initial state, the same as when Docker Desktop was first installed.</p>
+  </li>
+</ul>
+
+<h2 id="diagnose-and-feedback">Diagnose and feedback</h2>
+
+<h3 id="in-app-diagnostics">In-app diagnostics</h3>
+
+<p>If you encounter problems for which you do not find solutions in this
+documentation, on <a href="https://github.com/docker/desktop-linux/issues">Docker Desktop issues on
+GitHub</a>, we can help you troubleshoot
+the log data. Before reporting an issue, we recommend that you read the information provided on this page to fix some common known issues.</p>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>Docker Desktop offers support for users with a paid Docker subscription. If you are experiencing any issues with Docker Desktop, follow the instructions in this section to send a support request to Docker Support.</p>
+</blockquote>
+
+<p>Before you get started, we recommend that you sign into your Docker Desktop application and your <a href="https://hub.docker.com/" target="_blank" rel="noopener" class="_">Docker Hub</a> account.</p>
+
+<ol>
+  <li>Choose <img src="/desktop/linux/images/whale-x.png" alt="whale menu" class="inline" /> &gt; <strong>Troubleshoot</strong>.</li>
+  <li>Optional: Sign into Docker Desktop. In addition, ensure you are signed into your <a href="https://hub.docker.com/" target="_blank" rel="noopener" class="_">Docker account</a>.</li>
+  <li>Click <strong>Get support</strong>. This opens the in-app <strong>Support</strong> page and starts collecting the diagnostics.
+ <img src="/desktop/linux/images/diagnose-support.png" alt="Diagnose &amp; Feedback" width="600px" /></li>
+  <li>When the diagnostics collection process is complete, click <strong>Upload to get a Diagnostic ID</strong>.</li>
+  <li>When the diagnostics have been uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.</li>
+  <li>If you have a paid Docker subscription, click <strong>Contact Support</strong>. This opens the <a href="https://hub.docker.com/support/desktop/" target="_blank" rel="noopener" class="_">Docker Desktop support</a> form. Fill in the information required and add the ID you copied earlier to the Diagnostics ID field. Click <strong>Submit</strong> to request Docker Desktop support.
+    <blockquote>
+      <p><strong>Note</strong></p>
+
+      <p>You must be signed in to Docker Desktop using your Pro, Team, or Business tier credentials to access the support form. For information on what’s covered as part of Docker Desktop support, see <a href="#support">Support</a>.</p>
+    </blockquote>
+  </li>
+  <li>If you don’t have a paid Docker subscription, you can click <strong>Upgrade to benefit from Docker Support</strong> to upgrade your existing account.
+ Alternatively, click <strong>Report a Bug</strong> to open a new Docker Desktop issue on GitHub. This opens Docker Desktop <a href="https://github.com/docker/desktop-linux/issues/">for Linux</a> on GitHub in your web browser in a ‘New issue’ template. Complete the information required and ensure you add the diagnostic ID you copied earlier. Click <strong>submit new issue</strong> to create a new issue.</li>
+</ol>
+
+<h3 id="diagnosing-from-the-terminal">Diagnosing from the terminal</h3>
+
+<p>In some cases, it is useful to run the diagnostics yourself, for instance, if
+Docker Desktop cannot start.</p>
+
+<p>First, locate the <code class="language-plaintext highlighter-rouge">com.docker.diagnose</code> tool.  If you have installed Docker Desktop in the Applications directory, then it is located at
+<code class="language-plaintext highlighter-rouge">/opt/docker-desktop/bin/com.docker.diagnose</code>.</p>
+
+<p>To create <em>and upload</em> diagnostics, run:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>/opt/docker-desktop/bin/com.docker.diagnose gather <span class="nt">-upload</span>
+</code></pre></div></div>
+
+<p>After the diagnostics have finished, you should have the following output,
+containing your diagnostics ID:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Diagnostics Bundle: /tmp/B8CF8400-47B3-4068-ADA4-3BBDCE3985D9/20190726143610.zip
+Diagnostics ID:     B8CF8400-47B3-4068-ADA4-3BBDCE3985D9/20190726143610 <span class="o">(</span>uploaded<span class="o">)</span>
+Diagnostics Bundle: /tmp/BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051.zip
+Diagnostics ID:     BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051 <span class="o">(</span>uploaded<span class="o">)</span>
+</code></pre></div></div>
+
+<p>The diagnostics ID (here BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051) is
+composed of your user ID (BE9AFAAF-F68B-41D0-9D12-84760E6B8740) and a timestamp
+(20190905152051). Ensure you provide the full diagnostics ID, and not just the user ID.</p>
+
+<p>To view the contents of the diagnostic file, run:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>unzip –l /tmp/BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051.zip
+</code></pre></div></div>
+
+<p>If you have a paid Docker subscription, open the <a href="https://hub.docker.com/support/desktop/" target="_blank" rel="noopener" class="_">Docker Desktop support</a> form. Fill in the information required and add the ID to the Diagnostics ID field. Click <strong>Submit</strong> to request Docker Desktop support.</p>
+
+<h3 id="self-diagnose-tool">Self-diagnose tool</h3>
+
+<p>Docker Desktop contains a self-diagnose tool which helps you to identify some common problems. Before you run the self-diagnose tool, locate <code class="language-plaintext highlighter-rouge">com.docker.diagnose</code>. If you have installed Docker Desktop
+in the Applications directory, then the self-diagnose tool will be located at
+<code class="language-plaintext highlighter-rouge">/opt/docker-desktop/bin/com.docker.diagnose</code>.</p>
+
+<p>To run the self-diagnose tool, run:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>/opt/docker-desktop/bin/com.docker.diagnose check
+</code></pre></div></div>
+
+<p>The tool runs a suite of checks and displays <strong>PASS</strong> or <strong>FAIL</strong> next to each check. If there are any failures, it highlights the most relevant at the end of the report.</p>
+
+<blockquote>
+  <p><strong>Feedback</strong></p>
+
+  <p>Let us know your feedback on the self-diagnose tool by creating an issue in the <a href="https://github.com/docker/desktop-linux/issues">desktop-linux</a> GitHub repository.</p>
+</blockquote>
+
+<p><a name="logs"></a></p>
+
+<h2 id="check-the-logs">Check the logs</h2>
+
+<p>In addition to using the diagnose and feedback option to submit logs, you can
+browse the logs yourself.</p>
+
+<h4 id="in-a-terminal">In a terminal</h4>
+
+<p>If you prefer to investigate issues yourself, you can access Docker Desktop logs by running the following command:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>journalctl <span class="nt">--user</span> <span class="nt">--unit</span><span class="o">=</span>docker-desktop
+</code></pre></div></div>
+
+<p>You can also find the logs for the internal components included in Docker
+Desktop at <code class="language-plaintext highlighter-rouge">$HOME/.docker/desktop/log/</code>.</p>
+
+<h4 id="view-the-docker-daemon-logs">View the Docker Daemon logs</h4>
+
+<p>Refer to the <a href="/config/daemon/#read-the-logs">read the logs</a> section
+to learn how to view the Docker Daemon logs.</p>
+
+<p><a name="troubleshoot"></a></p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="volume-mounting-requires-file-sharing-for-any-project-directories-outside-of-home">Volume mounting requires file sharing for any project directories outside of <code class="language-plaintext highlighter-rouge">$HOME</code></h3>
+
+<p>If you are using mounted volumes and get runtime errors indicating an
+application file is not found, access to a volume mount is denied, or a service
+cannot start, such as when using <a href="/compose/gettingstarted/">Docker Compose</a>,
+you might need to enable <a href="/desktop/linux/#file-sharing">file sharing</a>.</p>
+
+<p>Volume mounting requires shared drives for projects that live outside of the
+<code class="language-plaintext highlighter-rouge">/home/&lt;user&gt;</code> directory. Go to <img src="/desktop/linux/images/whale-x.png" alt="whale menu" class="inline" /> &gt;
+<strong>Settings</strong> &gt; <strong>Resources</strong> &gt; <strong>File sharing</strong> and share the drive that contains the Dockerfile and volume.</p>
+
+<h3 id="workarounds-for-common-problems">Workarounds for common problems</h3>
+
+<ul>
+  <li>
+    <p>If <code class="language-plaintext highlighter-rouge">docker</code> commands aren’t working properly or as expected, you may need to
+unset some environment variables, to make sure you are not using the deprecated Docker Machine environment in your shell or command window. Unset the
+<code class="language-plaintext highlighter-rouge">DOCKER_HOST</code> environment variable and related variables. If you use bash, use the following command: <code class="language-plaintext highlighter-rouge">unset ${!DOCKER_*}</code></p>
+  </li>
+  <li>
+    <p>For the <code class="language-plaintext highlighter-rouge">hello-world-nginx</code> example, Docker Desktop must be running to get to
+the web server on <code class="language-plaintext highlighter-rouge">http://localhost/</code>. Make sure that the Docker icon is
+displayed on the menu bar, and that you run the Docker commands in a shell that is connected to the Docker Desktop Engine.
+Otherwise, you might start the webserver container but get a “web page not
+available” error when you go to <code class="language-plaintext highlighter-rouge">localhost</code>.</p>
+  </li>
+  <li>
+    <p>If you see errors like <code class="language-plaintext highlighter-rouge">Bind for 0.0.0.0:8080 failed: port is already
+allocated</code> or <code class="language-plaintext highlighter-rouge">listen tcp:0.0.0.0:8080: bind: address is already in use</code>:</p>
+
+    <ul>
+      <li>Run <code class="language-plaintext highlighter-rouge">lsof -i tcp:8080</code> to discover the name and pid of the other process and
+decide whether to shut the other process down, or to use a different port in
+your docker app.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="support">Support</h2>
+
+<p>This section contains instructions on how to get support, and covers the scope of Docker Desktop support.</p>
+
+<div class="docker-upgrade-cta" role="alert">
+  <div class="docker-upgrade-cta__heading">
+This feature requires a paid Docker subscription
+  </div>
+  <p>Docker Desktop offers support for developers subscribed to a Pro, Team, or a Business tier. Upgrade now to benefit from Docker Support.</p>
+ <a class="btn btn-primary" role="button" href="https://www.docker.com/pricing?utm_source=docker&amp;utm_medium=webreferral&amp;utm_campaign=docs_driven_upgrade_desktop_support" target="_blank"> Upgrade now </a>
+</div>
+
+<h3 id="how-do-i-get-docker-desktop-support">How do I get Docker Desktop support?</h3>
+
+<p>If you have a paid Docker subscription, please raise a ticket through <a href="https://hub.docker.com/support/desktop/" target="_blank" rel="noopener" class="_">Docker Desktop support</a>.</p>
+
+<p>Docker Community users can get support through our Github repos for-win, for-mac and desktop-linux where we respond on a best-effort basis.</p>
+
+<h3 id="what-support-can-i-get">What support can I get?</h3>
+
+<p>If you have a paid Docker subscription, you can request for support on the following types of issues:</p>
+
+<ul>
+  <li>Desktop upgrade issues</li>
+  <li>Desktop installation issues
+    <ul>
+      <li>Installation crashes</li>
+      <li>Failure to launch Docker Desktop on first run</li>
+    </ul>
+  </li>
+  <li>Usage issues
+    <ul>
+      <li>Crash closing software</li>
+      <li>Docker Desktop not behaving as expected</li>
+    </ul>
+  </li>
+  <li>Configuration issues</li>
+  <li>Basic product ‘how to’ questions</li>
+</ul>
+
+<h3 id="what-is-not-supported">What is not supported?</h3>
+
+<p>Docker Desktop excludes support for the following types of issues:</p>
+
+<ul>
+  <li>Use on or in conjunction with hardware or software other than that specified in the applicable documentation</li>
+  <li>Running on unsupported operating systems, including beta/preview versions of operating systems</li>
+  <li>Running containers of a different architecture using emulation</li>
+  <li>Support for the Docker engine, Docker CLI, or other bundled Linux components</li>
+  <li>Support for Kubernetes</li>
+  <li>Features labeled as experimental</li>
+  <li>System/Server administration activities</li>
+  <li>Supporting Desktop as a production runtime</li>
+  <li>Scale deployment/multi-machine installation of Desktop</li>
+  <li>Routine product maintenance (data backup, cleaning disk space and configuring log rotation)</li>
+  <li>Third-party applications not provided by Docker</li>
+  <li>Altered or modified Docker software</li>
+  <li>Defects in the Docker software due to hardware malfunction, abuse, or improper use</li>
+  <li>Any version of the Docker software other than the latest version</li>
+  <li>Reimbursing and expenses spent for third-party services not provided by Docker</li>
+  <li>Docker Support excludes training, customization, and integration</li>
+</ul>
+
+<h3 id="what-versions-are-supported">What versions are supported?</h3>
+
+<p>We currently only offer support for the latest version of Docker Desktop. If you are running an older version, you may be asked to upgrade before we investigate your support request.</p>
+
+<h3 id="how-many-machines-can-i-get-support-for-docker-desktop-on">How many machines can I get support for Docker Desktop on?</h3>
+
+<p>As a Pro user you can get support for Docker Desktop on a single machine.
+As a Team, you can get support for Docker Desktop for the number of machines equal to the number of seats as part of your plan.</p>
+
+<h3 id="what-oss-are-supported">What OS’s are supported?</h3>
+
+<p>Docker Desktop is available for Linux, Mac and Windows. The supported version information can be found on the following pages:</p>
+
+<ul>
+  <li><a href="/desktop/linux/install/#system-requirements">Linux system requirements</a></li>
+  <li><a href="/desktop/mac/install/#system-requirements">Mac system requirements</a></li>
+  <li><a href="/desktop/windows/install/#system-requirements">Windows system requirements</a></li>
+</ul>
+
+<h3 id="how-is-personal-data-handled-in-docker-desktop">How is personal data handled in Docker Desktop?</h3>
+
+<p>When uploading diagnostics to help Docker with investigating issues, the uploaded diagnostics bundle may contain personal data such as usernames and IP addresses. The diagnostics bundles are only accessible to Docker, Inc.
+employees who are directly involved in diagnosing Docker Desktop issues.</p>
+
+<p>By default, Docker, Inc. will delete uploaded diagnostics bundles after 30 days. You may also request the removal of a diagnostics bundle by either specifying the diagnostics ID or via your GitHub ID (if the diagnostics ID is mentioned in a GitHub issue). Docker, Inc. will only use the data in the diagnostics bundle to investigate specific user issues but may derive high-level (non personal) metrics such as the rate of issues from it.</p>
+
+<p>For more information, see <a href="https://www.docker.com/legal/data-processing-agreement" target="_blank" rel="noopener" class="_">Docker Data Processing Agreement</a>.</p>
+<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="/search/?q=linux">linux</a>, <a href="/search/?q=troubleshooting">troubleshooting</a>, <a href="/search/?q=logs">logs</a>, <a href="/search/?q=issues">issues</a></span></section>
+                    </main>
+                    <nav class="col-nav">
+                        <div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+                            <div id="navbar" class="nav-sidebar">
+                                <ul class="nav hidden-md hidden-lg"></ul>
+                                <ul class="nav" id="jsTOCLeftNav"></ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="col-toc">
+                        <div class="sidebar hidden-xs hidden-sm">
+                            <div class="toc-nav">
+                                <div class="feedback-links">
+                                    <ul><li><a href="https://github.com/docker/docker.github.io/edit/master/desktop/linux/troubleshoot.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li><li><a href="https://github.com/docker/docker.github.io/issues/new?body=File: [desktop/linux/troubleshoot.md](https://docs.docker.com/desktop/linux/troubleshoot/)" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li><li><div class="toggle-mode">
+  <div class="icon">
+      <i class="fa fa-sun-o" aria-hidden="true"></i>
+  </div>
+  <div class="toggle-switch">
+      <label class="switch">
+          <input type="checkbox" id="switch-style">
+          <span class="slider round"></span>
+      </label>
+  </div>
+  <div class="icon">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </div>
+</div>
+</li>
+                                    </ul>
+                                </div><div id="side-toc-title">On this page:</div>
+<ul id="my_toc" class="inline_toc">
+  <li><a href="#troubleshoot" class="nomunge">Troubleshoot</a></li>
+  <li><a href="#diagnose-and-feedback" class="nomunge">Diagnose and feedback</a>
+    <ul>
+      <li><a href="#in-app-diagnostics" class="nomunge">In-app diagnostics</a></li>
+      <li><a href="#diagnosing-from-the-terminal" class="nomunge">Diagnosing from the terminal</a></li>
+      <li><a href="#self-diagnose-tool" class="nomunge">Self-diagnose tool</a></li>
+    </ul>
+  </li>
+  <li><a href="#check-the-logs" class="nomunge">Check the logs</a>
+    <ul>
+      <li><a href="#in-a-terminal" class="nomunge">In a terminal</a></li>
+      <li><a href="#view-the-docker-daemon-logs" class="nomunge">View the Docker Daemon logs</a></li>
+    </ul>
+  </li>
+  <li><a href="#troubleshooting" class="nomunge">Troubleshooting</a>
+    <ul>
+      <li><a href="#volume-mounting-requires-file-sharing-for-any-project-directories-outside-of-home" class="nomunge">Volume mounting requires file sharing for any project directories outside of $HOME</a></li>
+      <li><a href="#workarounds-for-common-problems" class="nomunge">Workarounds for common problems</a></li>
+    </ul>
+  </li>
+  <li><a href="#support" class="nomunge">Support</a>
+    <ul>
+      <li><a href="#how-do-i-get-docker-desktop-support" class="nomunge">How do I get Docker Desktop support?</a></li>
+      <li><a href="#what-support-can-i-get" class="nomunge">What support can I get?</a></li>
+      <li><a href="#what-is-not-supported" class="nomunge">What is not supported?</a></li>
+      <li><a href="#what-versions-are-supported" class="nomunge">What versions are supported?</a></li>
+      <li><a href="#how-many-machines-can-i-get-support-for-docker-desktop-on" class="nomunge">How many machines can I get support for Docker Desktop on?</a></li>
+      <li><a href="#what-oss-are-supported" class="nomunge">What OS’s are supported?</a></li>
+      <li><a href="#how-is-personal-data-handled-in-docker-desktop" class="nomunge">How is personal data handled in Docker Desktop?</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+          
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products" target="_blank" rel="noopener">Product offerings</a></b></li>
+                        <li><a href="https://www.docker.com/products/personal" target="_blank" rel="noopener">Docker Personal</a></li>
+                        <li><a href="https://www.docker.com/products/pro" target="_blank" rel="noopener">Docker Pro</a></li>
+                        <li><a href="https://www.docker.com/products/team" target="_blank" rel="noopener">Docker Team</a></li>
+                        <li><a href="https://www.docker.com/products/business" target="_blank" rel="noopener">Docker Business</a></li>
+                        <li><a href="https://www.docker.com/products" target="_blank" rel="noopener">Compare Subscriptions</a></li>
+                        <li><b><a href="https://www.docker.com/" target="_blank" rel="noopener">Features</a></b></li>
+                        <li><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a></li>
+                        <li><a href="https://www.docker.com/products/docker-hub" target="_blank" rel="noopener">Docker Hub</a></li>
+                        <li><a href="https://www.docker.com/products/secure-software-supply-chain" target="_blank" rel="noopener">Secure Software Supply Chain</a></li>
+                        <li><a href="https://www.docker.com/products/container-runtime" target="_blank" rel="noopener">Container Runtime</a></li>
+                        <li><a href="https://www.docker.com/products/developer-tools" target="_blank" rel="noopener">Developer Tools</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Trusted Content</a></li>
+                        <li><a href="https://www.docker.com/roadmap" target="_blank" rel="noopener">Docker Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Developers</a></b></li>
+                        <li><a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">Use Cases</a></li>
+                        <li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Get Started</a></li>
+                        <li><a href="https://www.docker.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://www.docker.com/docker-community" target="_blank" rel="noopener">Community</a></li>
+                        <li><a href="https://www.docker.com/open-source" target="_blank" rel="noopener">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/get-involved/developer-preview" target="_blank" rel="noopener">Preview Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Pricing</a></b></li>
+                        <li><a href="https://www.docker.com/pricing/faq" target="_blank" rel="noopener">FAQ</a></li>
+                        <li><a href="https://www.docker.com/partners/programs" target="_blank" rel="noopener">Docker Verified Publisher</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/company" target="_blank" rel="noopener">About Us</a></b></li>
+                        <li><a href="https://www.docker.com/what-container" target="_blank" rel="noopener">What is a Container?</a></li>
+                        <li><a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">Why Docker?</a></li>
+                        <li><a href="https://www.docker.com/events" target="_blank" rel="noopener">Virtual Events</a></li>
+                        <li><a href="https://www.docker.com/swag" target="_blank" rel="noopener">Swag Store
+                        </a></li>
+                        <li><a href="https://www.docker.com/company/newsroom" target="_blank" rel="noopener">Newsroom</a></li>
+                        <li><a href="https://www.docker.com/careers" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.docker.com/company/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.docker.com/customers" target="_blank" rel="noopener">Customers</a></li>
+                        <li><a href="https://www.docker.com/newsletter-subscription" target="_blank" rel="noopener">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="https://www.docker.com/legal/docker-terms-service" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="https://status.docker.com/" target="_blank" rel="noopener">Status</a></li>
+                        <li><a href="https://www.docker.com/legal" target="_blank" rel="noopener">Legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright &copy; 2013-2021 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="https://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="https://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker">GitHub</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-slideshare"><a href="https://www.slideshare.net/docker">Slideshare</a></li>
+                    <li class="fa fa-reddit"><a href="https://www.reddit.com/r/docker">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <script>const pageURL = "/desktop/linux/troubleshoot/";</script></body>
+</html>

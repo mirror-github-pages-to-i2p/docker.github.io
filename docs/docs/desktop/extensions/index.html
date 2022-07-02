@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- Page generated 2022-07-02 18:47:56 +0000-->
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex"/><title>Docker Extensions | Docker Documentation</title>
+  <meta name="description" content="Extensions" />
+  <meta name="keywords" content="Docker Extensions, Docker Desktop, Linux, Mac, Windows">
+  <link rel="canonical" href="https://localhost:4000/desktop/extensions/" />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <link rel="apple-touch-icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+  <meta property="og:image" content="/favicons/docs@2x.ico"/>
+  <meta name="theme-color" content="#2496ed" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- hide elements that are only shown without JavaScript enabled -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>html.js .no-js { display: none !important; }</style><script defer src="/js/theme-switcher.js"></script>
+  <script defer src="/js/anchorlinks.js"></script>
+  <script defer src="/js/jquery.js"></script>
+  <script defer src="/js/bootstrap.min.js"></script>
+  <script defer src="/js/docs.js"></script><link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Book.woff2"    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/glyphicons-halflings-regular.woff2"       type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/fontawesome-webfont.woff2?v=4.7.0"        type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" id="pagestyle">
+
+  <!-- SEO stuff -->
+  <meta name="twitter:title" itemprop="title name" content="Docker Extensions"/>
+  <meta name="twitter:description" property="og:description" itemprop="description" content="" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:domain" content="docs.docker.com"/>
+  <meta name="twitter:site" content="@docker_docs"/>
+  <meta name="twitter:url" content="https://twitter.com/docker_docs"/>
+  <meta name="twitter:image:src" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta name="twitter:image:alt" content="Docker Documentation"/>
+  <meta property="og:title" content="Docker Extensions" />
+  <meta property="og:description" content="Extensions" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:updated_time" itemprop="dateUpdated" content="2022-07-02T18:47:56+00:00"/>
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://docs.docker.com/desktop/extensions/" />
+  <meta property="og:site_name" content="Docker Documentation" />
+  <meta property="article:published_time" itemprop="datePublished" content="2022-07-02T18:47:56+00:00"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Docker Extensions","description":"Extensions","url":"https://docs.docker.com/desktop/extensions/"}</script>
+  <!-- END SEO STUFF -->
+</head>
+<body class="colums">
+    <header>
+        <nav class="nav-secondary navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/">
+                <img class="logo" src="/images/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs" width="160" height="28" />
+            </a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="logo-mobile">
+    <a href="/">
+        <img src="/images/docker-icon.svg" alt="Docker Docs" title="Docker Docs" width="30" height="30" />
+    </a>
+</div>
+<div class="search-form" id="search-div">
+    <form class="search-form form-inline" id="searchForm" action="/search/" method="get">
+        <label for="st-search-input" class="sr-only">Search</label>
+        <input class="search-field form-control ds-input" id="st-search-input" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteResults"></div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container hidden-sm hidden-xs">
+    <div>
+        <ul class="nav navbar-nav"><li><a href="/" id="home">Home</a></li><li><a href="/get-started/overview/" id="guides">Guides</a></li><li><a href="/desktop/" id="manuals">Manuals</a></li><li><a href="/reference/" id="reference">Reference</a></li><li><a href="/samples/" id="samples">Samples</a></li></ul>
+    </div>
+    <div class="ctrl-right">
+        <a href="javascript:void(0)" id="menu-toggle" aria-label="Current page's menu toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="row hidden-sm hidden-xs">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li><a href="/" title="Docker docs homepage"><i class="fa fa-home"></i></a></li>
+            <li><a href="/desktop/">Manuals</a></li><li><a href="/desktop/">Docker Desktop</a></li><li><a href="/desktop/extensions/">Extensions (Beta)</a></li></ol>
+    </nav>
+</div></div>
+    </div>
+</nav>
+
+    </header>
+    <div class="wrapper right-open">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-body">
+                    <main class="col-content content">
+                        <section class="section"><h1>Docker Extensions</h1><p><em class="reading-time">Estimated reading time: 3 minutes</em></p><p>Docker Extensions lets you use third-party tools within Docker Desktop to extend its functionality. There is no limit to the number of extensions you can install.</p>
+
+<p>Docker Community members and partners can use our <a href="/desktop/extensions-sdk/">SDK</a> to create new extensions.</p>
+
+<blockquote>
+  <p><strong>Beta</strong></p>
+
+  <p>The Docker Extensions feature is currently in Beta. We recommend that you do not use Extensions in production environments.</p>
+</blockquote>
+
+<p><img src="/desktop/images/extensions-marketplace.PNG" alt="extenstions" width="750px" /></p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Docker Extensions is available as part of Docker Desktop 4.8.0 or a later release. Download and install Docker Desktop 4.8.0 or later:</p>
+
+<ul>
+  <li><a href="/desktop/mac/release-notes/">Mac</a></li>
+  <li><a href="/desktop/windows/release-notes/">Windows</a></li>
+  <li><a href="/desktop/linux/">Linux</a></li>
+</ul>
+
+<h2 id="add-an-extension">Add an extension</h2>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>For some extensions, a separate account needs to be created before use.</p>
+</blockquote>
+
+<p>To add Docker Extensions:</p>
+
+<ol>
+  <li>Open Docker Desktop.</li>
+  <li>From the Dashboard, select <strong>Add Extensions</strong> in the menu bar. 
+The Extensions Marketplace opens.</li>
+  <li>Browse the available extensions.</li>
+  <li>Click <strong>Install</strong>.<br />
+From here, you can click <strong>Open</strong> to access the extension or install additional extensions. The extension also appears in the menu bar.</li>
+</ol>
+
+<h2 id="see-containers-created-by-extensions">See containers created by extensions</h2>
+
+<p>By default, containers created by extensions are hidden from the list of containers in Docker Dashboard and the Docker CLI. To make them visible 
+update your settings:</p>
+
+<ol>
+  <li>Navigate to  <strong>Settings</strong>, or <strong>Preferences</strong> if you’re a Mac user.</li>
+  <li>Select the <strong>Extensions</strong> tab.</li>
+  <li>Next to <strong>Show Docker Extensions system containers</strong>, select or clear the checkbox to set your desired state.</li>
+  <li>In the bottom-right corner, click <strong>Apply &amp; Restart</strong>.</li>
+</ol>
+
+<h2 id="enable-or-disable-extensions-available-in-the-marketplace">Enable or disable extensions available in the Marketplace</h2>
+
+<p>Docker Extensions are switched on by default. To change your settings:</p>
+
+<ol>
+  <li>Navigate to  <strong>Settings</strong>, or <strong>Preferences</strong> if you’re a Mac user.</li>
+  <li>Select the <strong>Extensions</strong> tab.</li>
+  <li>Next to <strong>Enable Docker Extensions</strong>, select or clear the checkbox to set your desired state.</li>
+  <li>In the bottom-right corner, click <strong>Apply &amp; Restart</strong>.</li>
+</ol>
+
+<h2 id="enable-or-disable-extensions-not-available-in-the-marketplace">Enable or disable extensions not available in the Marketplace</h2>
+
+<p>You can install Docker Extensions through the Marketplace or through the Extensions SDK tools. You can choose to only allow published extensions (that have been published in the Extensions Marketplace).</p>
+
+<ol>
+  <li>Navigate to <strong>Settings</strong>, or <strong>Preferences</strong> if you’re a Mac user.</li>
+  <li>Select the <strong>Extensions</strong> tab.</li>
+  <li>Next to <strong>Allow only extensions distributed through the Docker Marketplace</strong>, select or clear the checkbox to set your desired state.</li>
+  <li>In the bottom-right corner, click <strong>Apply &amp; Restart</strong>.</li>
+</ol>
+
+<h2 id="update-an-extension">Update an extension</h2>
+<p>You can update Docker Extensions outside of Docker Desktop releases. To update an extension to the latest version:</p>
+
+<ol>
+  <li>Navigate to Docker Dashboard, and from the menu bar select the ellipsis to the right of <strong>Extensions</strong>.</li>
+  <li>Click <strong>Manage Extensions</strong>.
+If an extension has a new version available, it displays an <strong>Update</strong> button.</li>
+  <li>Click <strong>Update</strong>.</li>
+</ol>
+
+<h2 id="submit-feedback">Submit feedback</h2>
+<p>Feedback can be given to an extension author through a dedicated Slack channel or Github. To submit feedback about a particular extension:</p>
+
+<ol>
+  <li>Navigate to Docker Dashboard and from the menu bar select the ellipsis to the right of <strong>Extensions</strong>.</li>
+  <li>Click <strong>Manage Extensions</strong>.</li>
+  <li>Select the extension you want to provide feedback on.</li>
+  <li>Scroll down to the bottom of the extension’s description and, depending on the 
+extension, select:
+    <ul>
+      <li>Support</li>
+      <li>Slack</li>
+      <li>Issues
+ You’ll be sent to a page outside of Docker Desktop to submit your feedback.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>If an extension does not provide a way for you to give feedback, contact us and we’ll pass on the feedback for you.</p>
+
+<h2 id="uninstall-an-extension">Uninstall an extension</h2>
+<p>You can uninstall an extension at any time.</p>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>Any data used by the extension that is stored in a volume must be manually deleted.</p>
+</blockquote>
+
+<ol>
+  <li>From the menu bar, select the ellipsis to the right of <strong>Extensions</strong>.</li>
+  <li>Click <strong>Manage Extensions</strong>. This displays a list of extensions you’ve installed.</li>
+  <li>Click <strong>Uninstall</strong>.</li>
+</ol>
+<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="/search/?q=Docker Extensions">Docker Extensions</a>, <a href="/search/?q=Docker Desktop">Docker Desktop</a>, <a href="/search/?q=Linux">Linux</a>, <a href="/search/?q=Mac">Mac</a>, <a href="/search/?q=Windows">Windows</a></span></section>
+                    </main>
+                    <nav class="col-nav">
+                        <div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+                            <div id="navbar" class="nav-sidebar">
+                                <ul class="nav hidden-md hidden-lg"></ul>
+                                <ul class="nav" id="jsTOCLeftNav"></ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="col-toc">
+                        <div class="sidebar hidden-xs hidden-sm">
+                            <div class="toc-nav">
+                                <div class="feedback-links">
+                                    <ul><li><a href="https://github.com/docker/docker.github.io/edit/master/desktop/extensions.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li><li><a href="https://github.com/docker/docker.github.io/issues/new?body=File: [desktop/extensions.md](https://docs.docker.com/desktop/extensions/)" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li><li><div class="toggle-mode">
+  <div class="icon">
+      <i class="fa fa-sun-o" aria-hidden="true"></i>
+  </div>
+  <div class="toggle-switch">
+      <label class="switch">
+          <input type="checkbox" id="switch-style">
+          <span class="slider round"></span>
+      </label>
+  </div>
+  <div class="icon">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </div>
+</div>
+</li>
+                                    </ul>
+                                </div><div id="side-toc-title">On this page:</div>
+<ul id="my_toc" class="inline_toc">
+  <li><a href="#prerequisites" class="nomunge">Prerequisites</a>
+    <ul>
+      <li><a href="#add-an-extension" class="nomunge">Add an extension</a></li>
+      <li><a href="#see-containers-created-by-extensions" class="nomunge">See containers created by extensions</a></li>
+      <li><a href="#enable-or-disable-extensions-available-in-the-marketplace" class="nomunge">Enable or disable extensions available in the Marketplace</a></li>
+      <li><a href="#enable-or-disable-extensions-not-available-in-the-marketplace" class="nomunge">Enable or disable extensions not available in the Marketplace</a></li>
+      <li><a href="#update-an-extension" class="nomunge">Update an extension</a></li>
+      <li><a href="#submit-feedback" class="nomunge">Submit feedback</a></li>
+      <li><a href="#uninstall-an-extension" class="nomunge">Uninstall an extension</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+          
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products" target="_blank" rel="noopener">Product offerings</a></b></li>
+                        <li><a href="https://www.docker.com/products/personal" target="_blank" rel="noopener">Docker Personal</a></li>
+                        <li><a href="https://www.docker.com/products/pro" target="_blank" rel="noopener">Docker Pro</a></li>
+                        <li><a href="https://www.docker.com/products/team" target="_blank" rel="noopener">Docker Team</a></li>
+                        <li><a href="https://www.docker.com/products/business" target="_blank" rel="noopener">Docker Business</a></li>
+                        <li><a href="https://www.docker.com/products" target="_blank" rel="noopener">Compare Subscriptions</a></li>
+                        <li><b><a href="https://www.docker.com/" target="_blank" rel="noopener">Features</a></b></li>
+                        <li><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a></li>
+                        <li><a href="https://www.docker.com/products/docker-hub" target="_blank" rel="noopener">Docker Hub</a></li>
+                        <li><a href="https://www.docker.com/products/secure-software-supply-chain" target="_blank" rel="noopener">Secure Software Supply Chain</a></li>
+                        <li><a href="https://www.docker.com/products/container-runtime" target="_blank" rel="noopener">Container Runtime</a></li>
+                        <li><a href="https://www.docker.com/products/developer-tools" target="_blank" rel="noopener">Developer Tools</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Trusted Content</a></li>
+                        <li><a href="https://www.docker.com/roadmap" target="_blank" rel="noopener">Docker Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Developers</a></b></li>
+                        <li><a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">Use Cases</a></li>
+                        <li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Get Started</a></li>
+                        <li><a href="https://www.docker.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://www.docker.com/docker-community" target="_blank" rel="noopener">Community</a></li>
+                        <li><a href="https://www.docker.com/open-source" target="_blank" rel="noopener">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/get-involved/developer-preview" target="_blank" rel="noopener">Preview Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Pricing</a></b></li>
+                        <li><a href="https://www.docker.com/pricing/faq" target="_blank" rel="noopener">FAQ</a></li>
+                        <li><a href="https://www.docker.com/partners/programs" target="_blank" rel="noopener">Docker Verified Publisher</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/company" target="_blank" rel="noopener">About Us</a></b></li>
+                        <li><a href="https://www.docker.com/what-container" target="_blank" rel="noopener">What is a Container?</a></li>
+                        <li><a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">Why Docker?</a></li>
+                        <li><a href="https://www.docker.com/events" target="_blank" rel="noopener">Virtual Events</a></li>
+                        <li><a href="https://www.docker.com/swag" target="_blank" rel="noopener">Swag Store
+                        </a></li>
+                        <li><a href="https://www.docker.com/company/newsroom" target="_blank" rel="noopener">Newsroom</a></li>
+                        <li><a href="https://www.docker.com/careers" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.docker.com/company/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.docker.com/customers" target="_blank" rel="noopener">Customers</a></li>
+                        <li><a href="https://www.docker.com/newsletter-subscription" target="_blank" rel="noopener">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="https://www.docker.com/legal/docker-terms-service" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="https://status.docker.com/" target="_blank" rel="noopener">Status</a></li>
+                        <li><a href="https://www.docker.com/legal" target="_blank" rel="noopener">Legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright &copy; 2013-2021 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="https://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="https://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker">GitHub</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-slideshare"><a href="https://www.slideshare.net/docker">Slideshare</a></li>
+                    <li class="fa fa-reddit"><a href="https://www.reddit.com/r/docker">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <script>const pageURL = "/desktop/extensions/";</script></body>
+</html>

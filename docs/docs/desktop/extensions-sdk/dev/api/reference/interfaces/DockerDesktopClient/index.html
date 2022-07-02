@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<!-- Page generated 2022-07-02 18:47:56 +0000-->
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex"/><title>Interface: DockerDesktopClient | Docker Documentation</title>
+  <meta name="description" content="Docker extension API reference" />
+  <meta name="keywords" content="Docker, extensions, sdk, API, reference">
+  <link rel="canonical" href="https://localhost:4000/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/" />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <link rel="apple-touch-icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+  <meta property="og:image" content="/favicons/docs@2x.ico"/>
+  <meta name="theme-color" content="#2496ed" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- hide elements that are only shown without JavaScript enabled -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>html.js .no-js { display: none !important; }</style><script defer src="/js/theme-switcher.js"></script>
+  <script defer src="/js/anchorlinks.js"></script>
+  <script defer src="/js/jquery.js"></script>
+  <script defer src="/js/bootstrap.min.js"></script>
+  <script defer src="/js/docs.js"></script><link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Book.woff2"    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/glyphicons-halflings-regular.woff2"       type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/fontawesome-webfont.woff2?v=4.7.0"        type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" id="pagestyle">
+
+  <!-- SEO stuff -->
+  <meta name="twitter:title" itemprop="title name" content="Interface: DockerDesktopClient"/>
+  <meta name="twitter:description" property="og:description" itemprop="description" content="" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:domain" content="docs.docker.com"/>
+  <meta name="twitter:site" content="@docker_docs"/>
+  <meta name="twitter:url" content="https://twitter.com/docker_docs"/>
+  <meta name="twitter:image:src" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta name="twitter:image:alt" content="Docker Documentation"/>
+  <meta property="og:title" content="Interface: DockerDesktopClient" />
+  <meta property="og:description" content="Docker extension API reference" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:updated_time" itemprop="dateUpdated" content="2022-07-02T18:47:56+00:00"/>
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://docs.docker.com/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/" />
+  <meta property="og:site_name" content="Docker Documentation" />
+  <meta property="article:published_time" itemprop="datePublished" content="2022-07-02T18:47:56+00:00"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Interface: DockerDesktopClient","description":"Docker extension API reference","url":"https://docs.docker.com/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/"}</script>
+  <!-- END SEO STUFF -->
+</head>
+<body class="colums">
+    <header>
+        <nav class="nav-secondary navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/">
+                <img class="logo" src="/images/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs" width="160" height="28" />
+            </a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="logo-mobile">
+    <a href="/">
+        <img src="/images/docker-icon.svg" alt="Docker Docs" title="Docker Docs" width="30" height="30" />
+    </a>
+</div>
+<div class="search-form" id="search-div">
+    <form class="search-form form-inline" id="searchForm" action="/search/" method="get">
+        <label for="st-search-input" class="sr-only">Search</label>
+        <input class="search-field form-control ds-input" id="st-search-input" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteResults"></div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container hidden-sm hidden-xs">
+    <div>
+        <ul class="nav navbar-nav"><li><a href="/" id="home">Home</a></li><li><a href="/get-started/overview/" id="guides">Guides</a></li><li><a href="/desktop/" id="manuals">Manuals</a></li><li><a href="/reference/" id="reference">Reference</a></li><li><a href="/samples/" id="samples">Samples</a></li></ul>
+    </div>
+    <div class="ctrl-right">
+        <a href="javascript:void(0)" id="menu-toggle" aria-label="Current page's menu toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="row hidden-sm hidden-xs">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li><a href="/" title="Docker docs homepage"><i class="fa fa-home"></i></a></li>
+            <li><a href="/reference/">Reference</a></li><li><a>API reference</a></li><li><a href="/desktop/extensions-sdk/dev/api/reference/interfaces/DesktopUI/">Docker Extension SDK API (Beta)</a></li><li><a href="/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/">DockerDesktopClient</a></li></ol>
+    </nav>
+</div></div>
+    </div>
+</nav>
+
+    </header>
+    <div class="wrapper right-open">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-body">
+                    <main class="col-content content">
+                        <section class="section"><h1 id="interface-dockerdesktopclient">Interface: DockerDesktopClient</h1>
+
+<p>An amalgam of the v0 and v1 interfaces of the Docker Desktop API client,
+provided for backwards compatibility reasons. Unless you’re working with
+a legacy extension, use the v1 type instead.</p>
+
+<h2 id="properties">Properties</h2>
+
+<h3 id="backend">backend</h3>
+
+<p>• <code class="language-plaintext highlighter-rouge">Readonly</code> <strong>backend</strong>: <code class="language-plaintext highlighter-rouge">undefined</code> | <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/"><code class="language-plaintext highlighter-rouge">BackendV0</code></a></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">window.ddClient.backend</code> object can be used to communicate with the backend defined in the vm section of
+the extension metadata.
+The client is already connected to the backend.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/#extension">DockerDesktopClient.extension</a> instead.</p>
+
+<h4 id="inherited-from">Inherited from</h4>
+
+<p>DockerDesktopClientV0.backend</p>
+
+<hr />
+
+<h3 id="extension">extension</h3>
+
+<p>• <code class="language-plaintext highlighter-rouge">Readonly</code> <strong>extension</strong>: <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/Extension/"><code class="language-plaintext highlighter-rouge">Extension</code></a></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">ddClient.extension</code> object can be used to communicate with the backend defined in the vm section of the
+extension metadata.
+The client is already connected to the backend.</p>
+
+<h4 id="inherited-from-1">Inherited from</h4>
+
+<p>DockerDesktopClientV1.extension</p>
+
+<hr />
+
+<h3 id="desktopui">desktopUI</h3>
+
+<p>• <code class="language-plaintext highlighter-rouge">Readonly</code> <strong>desktopUI</strong>: <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/DesktopUI/"><code class="language-plaintext highlighter-rouge">DesktopUI</code></a></p>
+
+<h4 id="inherited-from-2">Inherited from</h4>
+
+<p>DockerDesktopClientV1.desktopUI</p>
+
+<hr />
+
+<h3 id="host">host</h3>
+
+<p>• <code class="language-plaintext highlighter-rouge">Readonly</code> <strong>host</strong>: <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/Host/"><code class="language-plaintext highlighter-rouge">Host</code></a></p>
+
+<h4 id="inherited-from-3">Inherited from</h4>
+
+<p>DockerDesktopClientV1.host</p>
+
+<hr />
+
+<h3 id="docker">docker</h3>
+
+<p>• <code class="language-plaintext highlighter-rouge">Readonly</code> <strong>docker</strong>: <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/Docker/"><code class="language-plaintext highlighter-rouge">Docker</code></a></p>
+
+<h4 id="inherited-from-4">Inherited from</h4>
+
+<p>DockerDesktopClientV1.docker</p>
+
+<h2 id="container-methods">Container Methods</h2>
+
+<h3 id="listcontainers">listContainers</h3>
+
+<p>▸ <strong>listContainers</strong>(<code class="language-plaintext highlighter-rouge">options</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<p>Get the list of running containers (same as <code class="language-plaintext highlighter-rouge">docker ps</code>).</p>
+
+<p>By default, this will not list stopped containers.
+You can use the option <code class="language-plaintext highlighter-rouge">{"all": true}</code> to list all the running and stopped containers.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">containers</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">listContainers</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/Docker/#listcontainers">Docker.listContainers</a> instead.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">options</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">never</code></td>
+      <td style="text-align: left">(Optional). A JSON like <code class="language-plaintext highlighter-rouge">{   "all": true,   "limit": 10,   "size": true,   "filters": JSON.stringify({ status: ["exited"] }), }</code> For more information about the different properties see <a href="https://docs.docker.com/engine/api/v1.37/#operation/ContainerList">the Docker API endpoint documentation</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<h4 id="inherited-from-5">Inherited from</h4>
+
+<p>DockerDesktopClientV0.listContainers</p>
+
+<hr />
+
+<h2 id="image-methods">Image Methods</h2>
+
+<h3 id="listimages">listImages</h3>
+
+<p>▸ <strong>listImages</strong>(<code class="language-plaintext highlighter-rouge">options</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<p>Get the list of images</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">images</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">listImages</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/Docker/#listimages">Docker.listImages</a> instead.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">options</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">never</code></td>
+      <td style="text-align: left">(Optional). A JSON like <code class="language-plaintext highlighter-rouge">{ "all": true, "filters": JSON.stringify({ dangling: ["true"] }), "digests": true }</code>  For more information about the different properties see <a href="https://docs.docker.com/engine/api/v1.37/#tag/Image">the Docker API endpoint documentation</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-1">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<h4 id="inherited-from-6">Inherited from</h4>
+
+<p>DockerDesktopClientV0.listImages</p>
+
+<hr />
+
+<h2 id="navigation-methods">Navigation Methods</h2>
+
+<h3 id="navigatetocontainers">navigateToContainers</h3>
+
+<p>▸ <strong>navigateToContainers</strong>(): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Navigate to the containers window in Docker Desktop.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToContainers</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/#viewcontainers">NavigationIntents.viewContainers</a> instead.</p>
+
+<h4 id="returns-2">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-7">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToContainers</p>
+
+<hr />
+
+<h3 id="navigatetocontainer">navigateToContainer</h3>
+
+<p>▸ <strong>navigateToContainer</strong>(<code class="language-plaintext highlighter-rouge">id</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>Navigate to the container window in Docker Desktop.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToContainer</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/#viewcontainer">NavigationIntents.viewContainer</a> instead.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The full container id, e.g. <code class="language-plaintext highlighter-rouge">46b57e400d801762e9e115734bf902a2450d89669d85881058a46136520aca28</code>. You can use the <code class="language-plaintext highlighter-rouge">--no-trunc</code> flag as part of the <code class="language-plaintext highlighter-rouge">docker ps</code> command to display the full container id.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-3">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>A promise that fails if the container doesn’t exist.</p>
+
+<h4 id="inherited-from-8">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToContainer</p>
+
+<hr />
+
+<h3 id="navigatetocontainerlogs">navigateToContainerLogs</h3>
+
+<p>▸ <strong>navigateToContainerLogs</strong>(<code class="language-plaintext highlighter-rouge">id</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>Navigate to the container logs window in Docker Desktop.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToContainerLogs</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use {@link DockerDesktopClient.viewContainerLogs} instead.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The full container id, e.g. <code class="language-plaintext highlighter-rouge">46b57e400d801762e9e115734bf902a2450d89669d85881058a46136520aca28</code>. You can use the <code class="language-plaintext highlighter-rouge">--no-trunc</code> flag as part of the <code class="language-plaintext highlighter-rouge">docker ps</code> command to display the full container id.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-4">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>A promise that fails if the container doesn’t exist.</p>
+
+<h4 id="inherited-from-9">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToContainerLogs</p>
+
+<hr />
+
+<h3 id="navigatetocontainerinspect">navigateToContainerInspect</h3>
+
+<p>▸ <strong>navigateToContainerInspect</strong>(<code class="language-plaintext highlighter-rouge">id</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>Navigate to the container inspect window in Docker Desktop.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToContainerInspect</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use {@link DockerDesktopClient.viewContainerInspect} instead.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The full container id, e.g. <code class="language-plaintext highlighter-rouge">46b57e400d801762e9e115734bf902a2450d89669d85881058a46136520aca28</code>. You can use the <code class="language-plaintext highlighter-rouge">--no-trunc</code> flag as part of the <code class="language-plaintext highlighter-rouge">docker ps</code> command to display the full container id.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-5">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>A promise that fails if the container doesn’t exist.</p>
+
+<h4 id="inherited-from-10">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToContainerInspect</p>
+
+<hr />
+
+<h3 id="navigatetocontainerstats">navigateToContainerStats</h3>
+
+<p>▸ <strong>navigateToContainerStats</strong>(<code class="language-plaintext highlighter-rouge">id</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>Navigate to the container stats to see the CPU, memory, disk read/write and network I/O usage.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToContainerStats</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use {@link DockerDesktopClient.viewContainerStats} instead.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The full container id, e.g. <code class="language-plaintext highlighter-rouge">46b57e400d801762e9e115734bf902a2450d89669d85881058a46136520aca28</code>. You can use the <code class="language-plaintext highlighter-rouge">--no-trunc</code> flag as part of the <code class="language-plaintext highlighter-rouge">docker ps</code> command to display the full container id.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-6">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>A promise that fails if the container doesn’t exist.</p>
+
+<h4 id="inherited-from-11">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToContainerStats</p>
+
+<hr />
+
+<h3 id="navigatetoimages">navigateToImages</h3>
+
+<p>▸ <strong>navigateToImages</strong>(): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Navigate to the images window in Docker Desktop.</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToImages</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/#viewimages">NavigationIntents.viewImages</a> instead.</p>
+
+<h4 id="returns-7">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-12">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToImages</p>
+
+<hr />
+
+<h3 id="navigatetoimage">navigateToImage</h3>
+
+<p>▸ <strong>navigateToImage</strong>(<code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">tag</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>Navigate to a specific image referenced by <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">tag</code> in Docker Desktop.
+In this navigation route you can find the image layers, commands, created time and size.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToImage</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">tag</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/#viewimage">NavigationIntents.viewImage</a> instead.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The full image id (including sha), e.g. <code class="language-plaintext highlighter-rouge">sha256:34ab3ae068572f4e85c448b4035e6be5e19cc41f69606535cd4d768a63432673</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">tag</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The tag of the image, e.g. <code class="language-plaintext highlighter-rouge">latest</code>, <code class="language-plaintext highlighter-rouge">0.0.1</code>, etc.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-8">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">any</code>&gt;</p>
+
+<p>A promise that fails if the container doesn’t exist.</p>
+
+<h4 id="inherited-from-13">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToImage</p>
+
+<hr />
+
+<h3 id="navigatetovolumes">navigateToVolumes</h3>
+
+<p>▸ <strong>navigateToVolumes</strong>(): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Navigate to the volumes window in Docker Desktop.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToVolumes</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/#viewvolumes">NavigationIntents.viewVolumes</a> instead.</p>
+
+<h4 id="returns-9">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-14">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToVolumes</p>
+
+<hr />
+
+<h3 id="navigatetovolume">navigateToVolume</h3>
+
+<p>▸ <strong>navigateToVolume</strong>(<code class="language-plaintext highlighter-rouge">volume</code>): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Navigate to a specific volume in Docker Desktop.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToVolume</span><span class="p">(</span><span class="nx">volume</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/#viewvolume">NavigationIntents.viewVolume</a> instead.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">volume</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The name of the volume, e.g. <code class="language-plaintext highlighter-rouge">my-volume</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-10">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-15">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToVolume</p>
+
+<hr />
+
+<h3 id="navigatetodevenvironments">navigateToDevEnvironments</h3>
+
+<p>▸ <strong>navigateToDevEnvironments</strong>(): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Navigate to the Dev Environments window in Docker Desktop.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">navigateToDevEnvironments</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/#viewdevenvironments">NavigationIntents.viewDevEnvironments</a> instead.</p>
+
+<h4 id="returns-11">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-16">Inherited from</h4>
+
+<p>DockerDesktopClientV0.navigateToDevEnvironments</p>
+
+<hr />
+
+<h2 id="other-methods">Other Methods</h2>
+
+<h3 id="exechostcmd">execHostCmd</h3>
+
+<p>▸ <strong>execHostCmd</strong>(<code class="language-plaintext highlighter-rouge">cmd</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/"><code class="language-plaintext highlighter-rouge">ExecResultV0</code></a>&gt;</p>
+
+<p>You can run binaries defined in the host section in the extension metadata.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">execHostCmd</span><span class="p">(</span><span class="s2">`cliShippedOnHost xxx`</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">cmdResult</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cmdResult</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/#exec">ExtensionCli.exec</a> instead.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cmd</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The command to be executed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-12">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/"><code class="language-plaintext highlighter-rouge">ExecResultV0</code></a>&gt;</p>
+
+<h4 id="inherited-from-17">Inherited from</h4>
+
+<p>DockerDesktopClientV0.execHostCmd</p>
+
+<hr />
+
+<h3 id="spawnhostcmd">spawnHostCmd</h3>
+
+<p>▸ <strong>spawnHostCmd</strong>(<code class="language-plaintext highlighter-rouge">cmd</code>, <code class="language-plaintext highlighter-rouge">args</code>, <code class="language-plaintext highlighter-rouge">callback</code>): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Invoke an extension binary on your host and getting the output stream.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">spawnHostCmd</span><span class="p">(</span>
+  <span class="s2">`cliShippedOnHost`</span><span class="p">,</span>
+  <span class="p">[</span><span class="s2">`arg1`</span><span class="p">,</span> <span class="s2">`arg2`</span><span class="p">],</span>
+  <span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="kr">any</span><span class="p">,</span> <span class="nx">err</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">stdout</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">stderr</span><span class="p">);</span>
+    <span class="c1">// Once the command exits we get the status code</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/#exec">ExtensionCli.exec</a> instead.</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cmd</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The command to be executed.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">args</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code>[]</td>
+      <td style="text-align: left">The arguments of the command to execute.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">callback</code></td>
+      <td style="text-align: left">(<code class="language-plaintext highlighter-rouge">data</code>: <code class="language-plaintext highlighter-rouge">any</code>, <code class="language-plaintext highlighter-rouge">error</code>: <code class="language-plaintext highlighter-rouge">any</code>) =&gt; <code class="language-plaintext highlighter-rouge">void</code></td>
+      <td style="text-align: left">The callback function where to listen from the command output data and errors.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-13">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-18">Inherited from</h4>
+
+<p>DockerDesktopClientV0.spawnHostCmd</p>
+
+<hr />
+
+<h3 id="execdockercmd">execDockerCmd</h3>
+
+<p>▸ <strong>execDockerCmd</strong>(<code class="language-plaintext highlighter-rouge">cmd</code>, ...<code class="language-plaintext highlighter-rouge">args</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/"><code class="language-plaintext highlighter-rouge">ExecResultV0</code></a>&gt;</p>
+
+<p>You can also directly execute the docker binary.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">execDockerCmd</span><span class="p">(</span><span class="dl">"</span><span class="s2">info</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/DockerCommand/#exec">DockerCommand.exec</a> instead.</p>
+
+<h4 id="parameters-10">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cmd</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The command to execute.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">...args</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code>[]</td>
+      <td style="text-align: left">The arguments of the command to execute.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-14">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/"><code class="language-plaintext highlighter-rouge">ExecResultV0</code></a>&gt;</p>
+
+<p>The result will contain both the standard output and the standard error of the executed command:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"stderr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"stdout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>For convenience, the command result object also has methods to easily parse it depending on the output format:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">output.lines(): string[]</code> splits output lines.</li>
+  <li><code class="language-plaintext highlighter-rouge">output.parseJsonObject(): any</code> parses a well-formed json output.</li>
+  <li><code class="language-plaintext highlighter-rouge">output.parseJsonLines(): any[]</code> parses each output line as a json object.</li>
+</ul>
+
+<p>If the output of the command is too long, or you need to get the output as a stream you can use the
+spawnDockerCmd function:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">spawnDockerCmd</span><span class="p">(</span><span class="dl">"</span><span class="s2">logs</span><span class="dl">"</span><span class="p">,</span> <span class="p">[</span><span class="dl">"</span><span class="s2">-f</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span><span class="p">],</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">stdout</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="inherited-from-19">Inherited from</h4>
+
+<p>DockerDesktopClientV0.execDockerCmd</p>
+
+<hr />
+
+<h3 id="spawndockercmd">spawnDockerCmd</h3>
+
+<p>▸ <strong>spawnDockerCmd</strong>(<code class="language-plaintext highlighter-rouge">cmd</code>, <code class="language-plaintext highlighter-rouge">args</code>, <code class="language-plaintext highlighter-rouge">callback</code>): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/DockerCommand/#exec">DockerCommand.exec</a> instead.</p>
+
+<h4 id="parameters-11">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cmd</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">args</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code>[]</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">callback</code></td>
+      <td style="text-align: left">(<code class="language-plaintext highlighter-rouge">data</code>: <code class="language-plaintext highlighter-rouge">any</code>, <code class="language-plaintext highlighter-rouge">error</code>: <code class="language-plaintext highlighter-rouge">any</code>) =&gt; <code class="language-plaintext highlighter-rouge">void</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-15">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-20">Inherited from</h4>
+
+<p>DockerDesktopClientV0.spawnDockerCmd</p>
+
+<hr />
+
+<h3 id="openexternal">openExternal</h3>
+
+<p>▸ <strong>openExternal</strong>(<code class="language-plaintext highlighter-rouge">url</code>): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Opens an external URL with the system default browser.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">openExternal</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://docker.com</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/Host/#openexternal">Host.openExternal</a> instead.</p>
+
+<h4 id="parameters-12">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The URL the browser will open (must have the protocol <code class="language-plaintext highlighter-rouge">http</code> or <code class="language-plaintext highlighter-rouge">https</code>).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-16">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-21">Inherited from</h4>
+
+<p>DockerDesktopClientV0.openExternal</p>
+
+<hr />
+
+<h2 id="toast-methods">Toast Methods</h2>
+
+<h3 id="toastsuccess">toastSuccess</h3>
+
+<p>▸ <strong>toastSuccess</strong>(<code class="language-plaintext highlighter-rouge">msg</code>): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Display a toast message of type success.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">toastSuccess</span><span class="p">(</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/Toast/#success">Toast.success</a> instead.</p>
+
+<h4 id="parameters-13">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">msg</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The message to display in the toast.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-17">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-22">Inherited from</h4>
+
+<p>DockerDesktopClientV0.toastSuccess</p>
+
+<hr />
+
+<h3 id="toastwarning">toastWarning</h3>
+
+<p>▸ <strong>toastWarning</strong>(<code class="language-plaintext highlighter-rouge">msg</code>): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Display a toast message of type warning.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">toastWarning</span><span class="p">(</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/Toast/#warning">Toast.warning</a> instead.</p>
+
+<h4 id="parameters-14">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">msg</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The message to display in the toast.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-18">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-23">Inherited from</h4>
+
+<p>DockerDesktopClientV0.toastWarning</p>
+
+<hr />
+
+<h3 id="toasterror">toastError</h3>
+
+<p>▸ <strong>toastError</strong>(<code class="language-plaintext highlighter-rouge">msg</code>): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Display a toast message of type error.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">toastError</span><span class="p">(</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/Toast/#error">Toast.error</a> instead.</p>
+
+<h4 id="parameters-15">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">msg</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The message to display in the toast.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-19">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+
+<h4 id="inherited-from-24">Inherited from</h4>
+
+<p>DockerDesktopClientV0.toastError</p>
+<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="/search/?q=Docker">Docker</a>, <a href="/search/?q=extensions">extensions</a>, <a href="/search/?q=sdk">sdk</a>, <a href="/search/?q=API">API</a>, <a href="/search/?q=reference">reference</a></span></section>
+                    </main>
+                    <nav class="col-nav">
+                        <div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+                            <div id="navbar" class="nav-sidebar">
+                                <ul class="nav hidden-md hidden-lg"></ul>
+                                <ul class="nav" id="jsTOCLeftNav"></ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="col-toc">
+                        <div class="sidebar hidden-xs hidden-sm">
+                            <div class="toc-nav">
+                                <div class="feedback-links">
+                                    <ul><li><a href="https://github.com/docker/docker.github.io/edit/master/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li><li><a href="https://github.com/docker/docker.github.io/issues/new?body=File: [desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient.md](https://docs.docker.com/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/)" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li><li><div class="toggle-mode">
+  <div class="icon">
+      <i class="fa fa-sun-o" aria-hidden="true"></i>
+  </div>
+  <div class="toggle-switch">
+      <label class="switch">
+          <input type="checkbox" id="switch-style">
+          <span class="slider round"></span>
+      </label>
+  </div>
+  <div class="icon">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </div>
+</div>
+</li>
+                                    </ul>
+                                </div><div id="side-toc-title">On this page:</div>
+<ul id="my_toc" class="inline_toc">
+  <li><a href="#properties" class="nomunge">Properties</a>
+    <ul>
+      <li><a href="#backend" class="nomunge">backend</a>
+        <ul>
+          <li><a href="#inherited-from" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#extension" class="nomunge">extension</a>
+        <ul>
+          <li><a href="#inherited-from-1" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#desktopui" class="nomunge">desktopUI</a>
+        <ul>
+          <li><a href="#inherited-from-2" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#host" class="nomunge">host</a>
+        <ul>
+          <li><a href="#inherited-from-3" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#docker" class="nomunge">docker</a>
+        <ul>
+          <li><a href="#inherited-from-4" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#container-methods" class="nomunge">Container Methods</a>
+    <ul>
+      <li><a href="#listcontainers" class="nomunge">listContainers</a>
+        <ul>
+          <li><a href="#parameters" class="nomunge">Parameters</a></li>
+          <li><a href="#returns" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-5" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#image-methods" class="nomunge">Image Methods</a>
+    <ul>
+      <li><a href="#listimages" class="nomunge">listImages</a>
+        <ul>
+          <li><a href="#parameters-1" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-1" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-6" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#navigation-methods" class="nomunge">Navigation Methods</a>
+    <ul>
+      <li><a href="#navigatetocontainers" class="nomunge">navigateToContainers</a>
+        <ul>
+          <li><a href="#returns-2" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-7" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#navigatetocontainer" class="nomunge">navigateToContainer</a>
+        <ul>
+          <li><a href="#parameters-2" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-3" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-8" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#navigatetocontainerlogs" class="nomunge">navigateToContainerLogs</a>
+        <ul>
+          <li><a href="#parameters-3" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-4" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-9" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#navigatetocontainerinspect" class="nomunge">navigateToContainerInspect</a>
+        <ul>
+          <li><a href="#parameters-4" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-5" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-10" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#navigatetocontainerstats" class="nomunge">navigateToContainerStats</a>
+        <ul>
+          <li><a href="#parameters-5" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-6" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-11" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#navigatetoimages" class="nomunge">navigateToImages</a>
+        <ul>
+          <li><a href="#returns-7" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-12" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#navigatetoimage" class="nomunge">navigateToImage</a>
+        <ul>
+          <li><a href="#parameters-6" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-8" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-13" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#navigatetovolumes" class="nomunge">navigateToVolumes</a>
+        <ul>
+          <li><a href="#returns-9" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-14" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#navigatetovolume" class="nomunge">navigateToVolume</a>
+        <ul>
+          <li><a href="#parameters-7" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-10" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-15" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#navigatetodevenvironments" class="nomunge">navigateToDevEnvironments</a>
+        <ul>
+          <li><a href="#returns-11" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-16" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#other-methods" class="nomunge">Other Methods</a>
+    <ul>
+      <li><a href="#exechostcmd" class="nomunge">execHostCmd</a>
+        <ul>
+          <li><a href="#parameters-8" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-12" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-17" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#spawnhostcmd" class="nomunge">spawnHostCmd</a>
+        <ul>
+          <li><a href="#parameters-9" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-13" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-18" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#execdockercmd" class="nomunge">execDockerCmd</a>
+        <ul>
+          <li><a href="#parameters-10" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-14" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-19" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#spawndockercmd" class="nomunge">spawnDockerCmd</a>
+        <ul>
+          <li><a href="#parameters-11" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-15" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-20" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#openexternal" class="nomunge">openExternal</a>
+        <ul>
+          <li><a href="#parameters-12" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-16" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-21" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#toast-methods" class="nomunge">Toast Methods</a>
+    <ul>
+      <li><a href="#toastsuccess" class="nomunge">toastSuccess</a>
+        <ul>
+          <li><a href="#parameters-13" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-17" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-22" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#toastwarning" class="nomunge">toastWarning</a>
+        <ul>
+          <li><a href="#parameters-14" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-18" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-23" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+      <li><a href="#toasterror" class="nomunge">toastError</a>
+        <ul>
+          <li><a href="#parameters-15" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-19" class="nomunge">Returns</a></li>
+          <li><a href="#inherited-from-24" class="nomunge">Inherited from</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+          
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products" target="_blank" rel="noopener">Product offerings</a></b></li>
+                        <li><a href="https://www.docker.com/products/personal" target="_blank" rel="noopener">Docker Personal</a></li>
+                        <li><a href="https://www.docker.com/products/pro" target="_blank" rel="noopener">Docker Pro</a></li>
+                        <li><a href="https://www.docker.com/products/team" target="_blank" rel="noopener">Docker Team</a></li>
+                        <li><a href="https://www.docker.com/products/business" target="_blank" rel="noopener">Docker Business</a></li>
+                        <li><a href="https://www.docker.com/products" target="_blank" rel="noopener">Compare Subscriptions</a></li>
+                        <li><b><a href="https://www.docker.com/" target="_blank" rel="noopener">Features</a></b></li>
+                        <li><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a></li>
+                        <li><a href="https://www.docker.com/products/docker-hub" target="_blank" rel="noopener">Docker Hub</a></li>
+                        <li><a href="https://www.docker.com/products/secure-software-supply-chain" target="_blank" rel="noopener">Secure Software Supply Chain</a></li>
+                        <li><a href="https://www.docker.com/products/container-runtime" target="_blank" rel="noopener">Container Runtime</a></li>
+                        <li><a href="https://www.docker.com/products/developer-tools" target="_blank" rel="noopener">Developer Tools</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Trusted Content</a></li>
+                        <li><a href="https://www.docker.com/roadmap" target="_blank" rel="noopener">Docker Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Developers</a></b></li>
+                        <li><a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">Use Cases</a></li>
+                        <li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Get Started</a></li>
+                        <li><a href="https://www.docker.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://www.docker.com/docker-community" target="_blank" rel="noopener">Community</a></li>
+                        <li><a href="https://www.docker.com/open-source" target="_blank" rel="noopener">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/get-involved/developer-preview" target="_blank" rel="noopener">Preview Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Pricing</a></b></li>
+                        <li><a href="https://www.docker.com/pricing/faq" target="_blank" rel="noopener">FAQ</a></li>
+                        <li><a href="https://www.docker.com/partners/programs" target="_blank" rel="noopener">Docker Verified Publisher</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/company" target="_blank" rel="noopener">About Us</a></b></li>
+                        <li><a href="https://www.docker.com/what-container" target="_blank" rel="noopener">What is a Container?</a></li>
+                        <li><a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">Why Docker?</a></li>
+                        <li><a href="https://www.docker.com/events" target="_blank" rel="noopener">Virtual Events</a></li>
+                        <li><a href="https://www.docker.com/swag" target="_blank" rel="noopener">Swag Store
+                        </a></li>
+                        <li><a href="https://www.docker.com/company/newsroom" target="_blank" rel="noopener">Newsroom</a></li>
+                        <li><a href="https://www.docker.com/careers" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.docker.com/company/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.docker.com/customers" target="_blank" rel="noopener">Customers</a></li>
+                        <li><a href="https://www.docker.com/newsletter-subscription" target="_blank" rel="noopener">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="https://www.docker.com/legal/docker-terms-service" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="https://status.docker.com/" target="_blank" rel="noopener">Status</a></li>
+                        <li><a href="https://www.docker.com/legal" target="_blank" rel="noopener">Legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright &copy; 2013-2021 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="https://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="https://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker">GitHub</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-slideshare"><a href="https://www.slideshare.net/docker">Slideshare</a></li>
+                    <li class="fa fa-reddit"><a href="https://www.reddit.com/r/docker">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <script>const pageURL = "/desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/";</script></body>
+</html>
