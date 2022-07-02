@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!-- Page generated 2022-07-02 18:27:36 +0000-->
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex"/><title>Extension image labels | Docker Documentation</title>
+  <meta name="description" content="Docker extension labels" />
+  <meta name="keywords" content="Docker, extensions, sdk, labels">
+  <link rel="canonical" href="https://localhost:4000/desktop/extensions-sdk/extensions/labels/" />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <link rel="apple-touch-icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+  <meta property="og:image" content="/favicons/docs@2x.ico"/>
+  <meta name="theme-color" content="#2496ed" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- hide elements that are only shown without JavaScript enabled -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>html.js .no-js { display: none !important; }</style><script defer src="/js/theme-switcher.js"></script>
+  <script defer src="/js/anchorlinks.js"></script>
+  <script defer src="/js/jquery.js"></script>
+  <script defer src="/js/bootstrap.min.js"></script>
+  <script defer src="/js/docs.js"></script><link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Book.woff2"    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/glyphicons-halflings-regular.woff2"       type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/fontawesome-webfont.woff2?v=4.7.0"        type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" id="pagestyle">
+
+  <!-- SEO stuff -->
+  <meta name="twitter:title" itemprop="title name" content="Extension image labels"/>
+  <meta name="twitter:description" property="og:description" itemprop="description" content="" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:domain" content="docs.docker.com"/>
+  <meta name="twitter:site" content="@docker_docs"/>
+  <meta name="twitter:url" content="https://twitter.com/docker_docs"/>
+  <meta name="twitter:image:src" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta name="twitter:image:alt" content="Docker Documentation"/>
+  <meta property="og:title" content="Extension image labels" />
+  <meta property="og:description" content="Docker extension labels" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:updated_time" itemprop="dateUpdated" content="2022-07-02T18:27:36+00:00"/>
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://docs.docker.com/desktop/extensions-sdk/extensions/labels/" />
+  <meta property="og:site_name" content="Docker Documentation" />
+  <meta property="article:published_time" itemprop="datePublished" content="2022-07-02T18:27:36+00:00"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Extension image labels","description":"Docker extension labels","url":"https://docs.docker.com/desktop/extensions-sdk/extensions/labels/"}</script>
+  <!-- END SEO STUFF -->
+</head>
+<body class="colums">
+    <header>
+        <nav class="nav-secondary navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/">
+                <img class="logo" src="/images/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs" width="160" height="28" />
+            </a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="logo-mobile">
+    <a href="/">
+        <img src="/images/docker-icon.svg" alt="Docker Docs" title="Docker Docs" width="30" height="30" />
+    </a>
+</div>
+<div class="search-form" id="search-div">
+    <form class="search-form form-inline" id="searchForm" action="/search/" method="get">
+        <label for="st-search-input" class="sr-only">Search</label>
+        <input class="search-field form-control ds-input" id="st-search-input" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteResults"></div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container hidden-sm hidden-xs">
+    <div>
+        <ul class="nav navbar-nav"><li><a href="/" id="home">Home</a></li><li><a href="/get-started/overview/" id="guides">Guides</a></li><li><a href="/desktop/" id="manuals">Manuals</a></li><li><a href="/reference/" id="reference">Reference</a></li><li><a href="/samples/" id="samples">Samples</a></li></ul>
+    </div>
+    <div class="ctrl-right">
+        <a href="javascript:void(0)" id="menu-toggle" aria-label="Current page's menu toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="row hidden-sm hidden-xs">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li><a href="/" title="Docker docs homepage"><i class="fa fa-home"></i></a></li>
+            <li><a href="/desktop/">Manuals</a></li><li><a href="/desktop/">Docker Desktop</a></li><li><a href="/desktop/extensions-sdk/">Extensions SDK (Beta)</a></li><li><a href="/desktop/extensions-sdk/extensions/">Part two: Publish</a></li><li><a href="/desktop/extensions-sdk/extensions/labels/">Labels</a></li></ol>
+    </nav>
+</div></div>
+    </div>
+</nav>
+
+    </header>
+    <div class="wrapper right-open">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-body">
+                    <main class="col-content content">
+                        <section class="section"><h1>Extension image labels</h1><p><em class="reading-time">Estimated reading time: 3 minutes</em></p><p><a href="https://docs.docker.com/engine/reference/builder/#label">Labels</a> are specified in the extension’s <code class="language-plaintext highlighter-rouge">Dockerfile</code> and used to provide information about the extension.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Required</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">org.opencontainers.image.title</code></td>
+      <td>Yes</td>
+      <td>Human-readable title of the image (string). This appears in the UI for Docker Desktop.</td>
+      <td>my-extension</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">org.opencontainers.image.description</code></td>
+      <td>Yes</td>
+      <td>Human-readable description of the software packaged in the image (string)</td>
+      <td>This extension is cool.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">org.opencontainers.image.vendor</code></td>
+      <td>Yes</td>
+      <td>Name of the distributing entity, organization, or individual.</td>
+      <td>Acme, Inc.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">com.docker.desktop.extension.api.version</code></td>
+      <td>Yes</td>
+      <td>Version of the Docker Extension manager that the extension is compatible with. It must follow <a href="https://semver.org/">semantic versioning</a>.</td>
+      <td>A specific version like <code class="language-plaintext highlighter-rouge">0.1.0</code> or, a constraint expression: <code class="language-plaintext highlighter-rouge">&gt;= 0.1.0</code>, <code class="language-plaintext highlighter-rouge">&gt;= 1.4.7, &lt; 2.0</code> . For your first extension, you can use <code class="language-plaintext highlighter-rouge">docker extension version</code> to know the SDK API version and specify <code class="language-plaintext highlighter-rouge">&gt;= &lt;SDK_API_VERSION&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">com.docker.desktop.extension.icon</code></td>
+      <td>No</td>
+      <td>The extension icon (format: .svg .png .jpg)</td>
+      <td><a href="https://docs.docker.com/images/engine.svg" target="__blank">https://docs.docker.com/images/engine.svg<a></a></a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">com.docker.extension.screenshots</code></td>
+      <td>No</td>
+      <td>A JSON array of image URLs and an alternative text displayed to users (in the order they appear in your metadata) in your extension’s details page. <strong>Note:</strong> The recommended size for sceenshots is 2400x1600 pixels.</td>
+      <td><code class="language-plaintext highlighter-rouge">"[{"alt":"alternative text for image 1",</code> <code class="language-plaintext highlighter-rouge">"url":"https://foo.bar/image1.png"},</code> <code class="language-plaintext highlighter-rouge">{"alt":"alternative text for image2",</code> <code class="language-plaintext highlighter-rouge">"url":"https://foo.bar/image2.jpg"}]"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">com.docker.extension.detailed-description</code></td>
+      <td>No</td>
+      <td>Additional information in plain text or HTML about the extension to be displayed in the details dialog.</td>
+      <td><code class="language-plaintext highlighter-rouge">My detailed description</code> or <code class="language-plaintext highlighter-rouge">&lt;h1&gt;My detailed description&lt;/h1&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">com.docker.extension.publisher-url</code></td>
+      <td>No</td>
+      <td>The publisher website URL to be displayed in the details dialog.</td>
+      <td><code class="language-plaintext highlighter-rouge">https://foo.bar</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">com.docker.extension.additional-urls</code></td>
+      <td>No</td>
+      <td>A JSON array of titles and additional URLs displayed to users (in the order they appear in your metadata) in your extension’s details page. We recommend you display the following links if they apply: documentation, support, terms of service, and privacy policy links.</td>
+      <td><code class="language-plaintext highlighter-rouge">[{"title":"Documentation","url":"https://foo.bar/docs"},</code> <code class="language-plaintext highlighter-rouge">{"title":"Support","url":"https://foo.bar/support"},</code> <code class="language-plaintext highlighter-rouge">{"title":"Terms of Service","url":"https://foo.bar/tos"},</code> <code class="language-plaintext highlighter-rouge">{"title":"Privacy policy","url":"https://foo.bar/privacy-policy"}]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">com.docker.extension.changelog</code></td>
+      <td>No</td>
+      <td>Changelog in plain text or HTML containing the change for the current version only.</td>
+      <td><code class="language-plaintext highlighter-rouge">Extension changelog</code> or <code class="language-plaintext highlighter-rouge">&lt;p&gt;Extension changelog&lt;ul&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;li&gt;New feature A&lt;/li&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;li&gt;Bug fix on feature B&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">com.docker.extension.account-info</code></td>
+      <td>No</td>
+      <td>Whether the user needs to sign up or log in to a SaaS platform to use some features of the extension.</td>
+      <td><code class="language-plaintext highlighter-rouge">required</code> in case it does, leave it empty otherwise.</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Missing required labels</p>
+
+  <p>If any of the previous <em>required</em> labels are missing in the <code class="language-plaintext highlighter-rouge">Dockerfile</code>, Docker Desktop considers the extension invalid and does not list it in the Marketplace.</p>
+</blockquote>
+
+<blockquote>
+  <p>HTML content styling</p>
+
+  <p>Docker Desktop CSS styles will be applied to the provided HTML content. You can make sure that it renders nicely <a href="#preview-the-extension-in-the-marketplace">within the marketplace</a>. We recommend that you follow our <a href="/desktop/extensions-sdk/design/overview/">Styling guidelines</a>.</p>
+</blockquote>
+
+<h2 id="preview-the-extension-in-the-marketplace">Preview the extension in the Marketplace</h2>
+
+<p>You can validate that the image labels render as you expect.</p>
+
+<p>When you build and install your unpublished extension, you can preview the extension in the Marketplace “installed” tab. You can see how the extension labels are rendered in the list and in the details page of the extension.</p>
+
+<blockquote>
+  <p>Preview extensions already listed in Marketplace</p>
+
+  <p>When you install a local image of an extension already published in the Marketplace, for example with the tag <code class="language-plaintext highlighter-rouge">latest</code>, your local image is currently not detected as “unpublished”.</p>
+
+  <p>You can retag your image in order to have a different image name that is not listed as a published extension.
+Use <code class="language-plaintext highlighter-rouge">docker tag org/published-extension unpublished-extension</code> and then <code class="language-plaintext highlighter-rouge">docker extension install unpublished-extension</code>.</p>
+</blockquote>
+
+<p><img src="/desktop/extensions-sdk/extensions/images/list-preview.png" alt="List preview" /></p>
+
+<p><img src="/desktop/extensions-sdk/extensions/images/details-preview.png" alt="List preview" /></p>
+<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="/search/?q=Docker">Docker</a>, <a href="/search/?q=extensions">extensions</a>, <a href="/search/?q=sdk">sdk</a>, <a href="/search/?q=labels">labels</a></span></section>
+                    </main>
+                    <nav class="col-nav">
+                        <div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+                            <div id="navbar" class="nav-sidebar">
+                                <ul class="nav hidden-md hidden-lg"></ul>
+                                <ul class="nav" id="jsTOCLeftNav"></ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="col-toc">
+                        <div class="sidebar hidden-xs hidden-sm">
+                            <div class="toc-nav">
+                                <div class="feedback-links">
+                                    <ul><li><a href="https://github.com/docker/docker.github.io/edit/master/desktop/extensions-sdk/extensions/labels.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li><li><a href="https://github.com/docker/docker.github.io/issues/new?body=File: [desktop/extensions-sdk/extensions/labels.md](https://docs.docker.com/desktop/extensions-sdk/extensions/labels/)" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li><li><div class="toggle-mode">
+  <div class="icon">
+      <i class="fa fa-sun-o" aria-hidden="true"></i>
+  </div>
+  <div class="toggle-switch">
+      <label class="switch">
+          <input type="checkbox" id="switch-style">
+          <span class="slider round"></span>
+      </label>
+  </div>
+  <div class="icon">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </div>
+</div>
+</li>
+                                    </ul>
+                                </div><div id="side-toc-title">On this page:</div>
+<ul id="my_toc" class="inline_toc">
+  <li><a href="#preview-the-extension-in-the-marketplace" class="nomunge">Preview the extension in the Marketplace</a></li>
+</ul>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+          
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products" target="_blank" rel="noopener">Product offerings</a></b></li>
+                        <li><a href="https://www.docker.com/products/personal" target="_blank" rel="noopener">Docker Personal</a></li>
+                        <li><a href="https://www.docker.com/products/pro" target="_blank" rel="noopener">Docker Pro</a></li>
+                        <li><a href="https://www.docker.com/products/team" target="_blank" rel="noopener">Docker Team</a></li>
+                        <li><a href="https://www.docker.com/products/business" target="_blank" rel="noopener">Docker Business</a></li>
+                        <li><a href="https://www.docker.com/products" target="_blank" rel="noopener">Compare Subscriptions</a></li>
+                        <li><b><a href="https://www.docker.com/" target="_blank" rel="noopener">Features</a></b></li>
+                        <li><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a></li>
+                        <li><a href="https://www.docker.com/products/docker-hub" target="_blank" rel="noopener">Docker Hub</a></li>
+                        <li><a href="https://www.docker.com/products/secure-software-supply-chain" target="_blank" rel="noopener">Secure Software Supply Chain</a></li>
+                        <li><a href="https://www.docker.com/products/container-runtime" target="_blank" rel="noopener">Container Runtime</a></li>
+                        <li><a href="https://www.docker.com/products/developer-tools" target="_blank" rel="noopener">Developer Tools</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Trusted Content</a></li>
+                        <li><a href="https://www.docker.com/roadmap" target="_blank" rel="noopener">Docker Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Developers</a></b></li>
+                        <li><a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">Use Cases</a></li>
+                        <li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Get Started</a></li>
+                        <li><a href="https://www.docker.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://www.docker.com/docker-community" target="_blank" rel="noopener">Community</a></li>
+                        <li><a href="https://www.docker.com/open-source" target="_blank" rel="noopener">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/get-involved/developer-preview" target="_blank" rel="noopener">Preview Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Pricing</a></b></li>
+                        <li><a href="https://www.docker.com/pricing/faq" target="_blank" rel="noopener">FAQ</a></li>
+                        <li><a href="https://www.docker.com/partners/programs" target="_blank" rel="noopener">Docker Verified Publisher</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/company" target="_blank" rel="noopener">About Us</a></b></li>
+                        <li><a href="https://www.docker.com/what-container" target="_blank" rel="noopener">What is a Container?</a></li>
+                        <li><a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">Why Docker?</a></li>
+                        <li><a href="https://www.docker.com/events" target="_blank" rel="noopener">Virtual Events</a></li>
+                        <li><a href="https://www.docker.com/swag" target="_blank" rel="noopener">Swag Store
+                        </a></li>
+                        <li><a href="https://www.docker.com/company/newsroom" target="_blank" rel="noopener">Newsroom</a></li>
+                        <li><a href="https://www.docker.com/careers" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.docker.com/company/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.docker.com/customers" target="_blank" rel="noopener">Customers</a></li>
+                        <li><a href="https://www.docker.com/newsletter-subscription" target="_blank" rel="noopener">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="https://www.docker.com/legal/docker-terms-service" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="https://status.docker.com/" target="_blank" rel="noopener">Status</a></li>
+                        <li><a href="https://www.docker.com/legal" target="_blank" rel="noopener">Legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright &copy; 2013-2021 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="https://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="https://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker">GitHub</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-slideshare"><a href="https://www.slideshare.net/docker">Slideshare</a></li>
+                    <li class="fa fa-reddit"><a href="https://www.reddit.com/r/docker">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <script>const pageURL = "/desktop/extensions-sdk/extensions/labels/";</script></body>
+</html>

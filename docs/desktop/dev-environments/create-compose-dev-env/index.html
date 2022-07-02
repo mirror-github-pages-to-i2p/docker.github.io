@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- Page generated 2022-07-02 18:27:36 +0000-->
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex"/><title>Create a Compose Dev Environment | Docker Documentation</title>
+  <meta name="description" content="Dev Environments" />
+  <meta name="keywords" content="Dev Environments, share, collaborate, local, compose">
+  <link rel="canonical" href="https://localhost:4000/desktop/dev-environments/create-compose-dev-env/" />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <link rel="apple-touch-icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+  <meta property="og:image" content="/favicons/docs@2x.ico"/>
+  <meta name="theme-color" content="#2496ed" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- hide elements that are only shown without JavaScript enabled -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>html.js .no-js { display: none !important; }</style><script defer src="/js/theme-switcher.js"></script>
+  <script defer src="/js/anchorlinks.js"></script>
+  <script defer src="/js/jquery.js"></script>
+  <script defer src="/js/bootstrap.min.js"></script>
+  <script defer src="/js/docs.js"></script><link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Book.woff2"    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/glyphicons-halflings-regular.woff2"       type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/fontawesome-webfont.woff2?v=4.7.0"        type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" id="pagestyle">
+
+  <!-- SEO stuff -->
+  <meta name="twitter:title" itemprop="title name" content="Create a Compose Dev Environment"/>
+  <meta name="twitter:description" property="og:description" itemprop="description" content="" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:domain" content="docs.docker.com"/>
+  <meta name="twitter:site" content="@docker_docs"/>
+  <meta name="twitter:url" content="https://twitter.com/docker_docs"/>
+  <meta name="twitter:image:src" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta name="twitter:image:alt" content="Docker Documentation"/>
+  <meta property="og:title" content="Create a Compose Dev Environment" />
+  <meta property="og:description" content="Dev Environments" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:updated_time" itemprop="dateUpdated" content="2022-07-02T18:27:36+00:00"/>
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://docs.docker.com/desktop/dev-environments/create-compose-dev-env/" />
+  <meta property="og:site_name" content="Docker Documentation" />
+  <meta property="article:published_time" itemprop="datePublished" content="2022-07-02T18:27:36+00:00"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Create a Compose Dev Environment","description":"Dev Environments","url":"https://docs.docker.com/desktop/dev-environments/create-compose-dev-env/"}</script>
+  <!-- END SEO STUFF -->
+</head>
+<body class="colums">
+    <header>
+        <nav class="nav-secondary navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/">
+                <img class="logo" src="/images/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs" width="160" height="28" />
+            </a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="logo-mobile">
+    <a href="/">
+        <img src="/images/docker-icon.svg" alt="Docker Docs" title="Docker Docs" width="30" height="30" />
+    </a>
+</div>
+<div class="search-form" id="search-div">
+    <form class="search-form form-inline" id="searchForm" action="/search/" method="get">
+        <label for="st-search-input" class="sr-only">Search</label>
+        <input class="search-field form-control ds-input" id="st-search-input" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteResults"></div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container hidden-sm hidden-xs">
+    <div>
+        <ul class="nav navbar-nav"><li><a href="/" id="home">Home</a></li><li><a href="/get-started/overview/" id="guides">Guides</a></li><li><a href="/desktop/" id="manuals">Manuals</a></li><li><a href="/reference/" id="reference">Reference</a></li><li><a href="/samples/" id="samples">Samples</a></li></ul>
+    </div>
+    <div class="ctrl-right">
+        <a href="javascript:void(0)" id="menu-toggle" aria-label="Current page's menu toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="row hidden-sm hidden-xs">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li><a href="/" title="Docker docs homepage"><i class="fa fa-home"></i></a></li>
+            <li><a href="/desktop/">Manuals</a></li><li><a href="/desktop/">Docker Desktop</a></li><li><a href="/desktop/dev-environments/">Dev Environments (Beta)</a></li><li><a href="/desktop/dev-environments/create-compose-dev-env/">Create a Compose Dev Environment</a></li></ol>
+    </nav>
+</div></div>
+    </div>
+</nav>
+
+    </header>
+    <div class="wrapper right-open">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-body">
+                    <main class="col-content content">
+                        <section class="section"><h1>Create a Compose Dev Environment</h1><p><em class="reading-time">Estimated reading time: 5 minutes</em></p><p>Use Dev Environments to collaborate on any Docker Compose-based projects.</p>
+
+<p>As with a simple Dev Environment, you can create a Compose Dev Environment from a:</p>
+<ul>
+  <li>Git repository</li>
+  <li>Branch or tag of a Git repository</li>
+  <li>Subfolder of a Git repository</li>
+  <li>Local folder</li>
+</ul>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>When cloning a Git repository using SSH, ensure you’ve added your SSH key to the ssh-agent. To do this, open a terminal and run <code class="language-plaintext highlighter-rouge">ssh-add &lt;path to your private ssh key&gt;</code>.</p>
+</blockquote>
+
+<h2 id="create-a-compose-dev-environment">Create a Compose Dev Environment</h2>
+
+<p>The example below, taken from the <code class="language-plaintext highlighter-rouge">compose-dev-env</code> project from the <a href="https://github.com/dockersamples/compose-dev-env" target="_blank" rel="noopener" class="_">Docker Samples</a> GitHub repository, demonstrates how to create a Compose Dev Environment from a Git repository.</p>
+
+<blockquote>
+  <p>Note</p>
+
+  <p>If you want to create a Compose Dev Environment from a subdirectory of a Git repo, you need to define your own compose file in a .docker folder located in your subdirectory as currently, Dev Environments is not able to detect the main language of the subdirectory.</p>
+
+  <p>For more information on how to configure, see the <a href="https://github.com/docker/awesome-compose/tree/master/react-java-mysql">React application with a Spring backend and a MySQL database sample</a> or the <a href="https://github.com/docker/awesome-compose/tree/master/nginx-golang-postgres">Go server with an Nginx proxy and a Postgres database sample</a>.</p>
+</blockquote>
+
+<ol>
+  <li>From <strong>Dev Environments</strong>, select <strong>Create</strong>. The <strong>Create a Dev Environment</strong> dialog displays.</li>
+  <li>Click <strong>Get Started</strong> and then copy <code class="language-plaintext highlighter-rouge">https://github.com/dockersamples/compose-dev-env.git</code> and add it to the <strong>Enter the Git Repository</strong> field on the <strong>Existing Git repo</strong> tab.</li>
+  <li>
+    <p>Click <strong>Continue</strong>. This initializes the project, clones the Git code, and builds the Compose application. This:</p>
+
+    <ul>
+      <li>Builds local images for services that are defined in the Compose file</li>
+      <li>Pulls images required for other services</li>
+      <li>Creates volumes and networks</li>
+      <li>Starts the Compose stack</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Once your application is up and running, you can check by opening <a href="http://localhost:8080">http://localhost:8080</a> in your browser.</p>
+
+<p>The time taken to start the Compose application depends on how your application is configured, whether the images have been built, and the number of services you have defined, for example.</p>
+
+<p>Note that VS Code doesn’t open directly, unlike a simple Dev Environment, as there are multiple services configured. You can hover over a service and then click on the <strong>Open in VS Code</strong> button to open a specific service in VS Code. This stops the existing container and creates a new container which allows you to develop and update your service in VS Code.</p>
+
+<p>You can now update your service and test it against your Compose application.</p>
+
+<h2 id="set-up-your-own-compose-dev-environment">Set up your own Compose Dev Environment</h2>
+
+<p>To set up a Dev Environment for your own Compose-based project, there are additional configuration steps to tell Docker Desktop how to build, start, and use the right Dev Environment image for your services.</p>
+
+<p>Dev Environments use an additional <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code> file located in the <code class="language-plaintext highlighter-rouge">.docker</code> directory at the root of your project. This file allows you to define the image required for a dedicated service, the ports you’d like to expose, along with additional configuration options dedicated to Dev Environments coming in the future.</p>
+
+<p>Take a detailed look at the <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code> file used in the <a href="https://github.com/dockersamples/compose-dev-env/blob/main/.docker/docker-compose.yaml" target="_blank" rel="noopener" class="_">compose-dev-env</a> sample project.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.7"</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">backend</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span>
+      <span class="na">context</span><span class="pi">:</span> <span class="s">backend</span>
+      <span class="na">target</span><span class="pi">:</span> <span class="s">development</span>
+    <span class="na">secrets</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db-password</span>
+    <span class="na">depends_on</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db</span>
+  <span class="na">db</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">mariadb</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="na">healthcheck</span><span class="pi">:</span>
+      <span class="na">test</span><span class="pi">:</span> <span class="pi">[</span> <span class="s2">"</span><span class="s">CMD"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">mysqladmin"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">ping"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">-h"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">127.0.0.1"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">--silent"</span> <span class="pi">]</span>
+      <span class="na">interval</span><span class="pi">:</span> <span class="s">3s</span>
+      <span class="na">retries</span><span class="pi">:</span> <span class="m">5</span>
+      <span class="na">start_period</span><span class="pi">:</span> <span class="s">30s</span>
+    <span class="na">secrets</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db-password</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db-data:/var/lib/mysql</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">MYSQL_DATABASE=example</span>
+      <span class="pi">-</span> <span class="s">MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password</span>
+    <span class="na">expose</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="m">3306</span>
+  <span class="na">proxy</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="s">proxy</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">8080:80</span>
+    <span class="na">depends_on</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">backend</span>
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">db-data</span><span class="pi">:</span>
+<span class="na">secrets</span><span class="pi">:</span>
+  <span class="na">db-password</span><span class="pi">:</span>
+    <span class="na">file</span><span class="pi">:</span> <span class="s">db/password.txt</span>
+</code></pre></div></div>
+
+<p>In the yaml file, the build context <code class="language-plaintext highlighter-rouge">backend</code> specifies that that the container should be built using the <code class="language-plaintext highlighter-rouge">development</code> stage (<code class="language-plaintext highlighter-rouge">target</code> attribute) of the Dockerfile located in the <code class="language-plaintext highlighter-rouge">backend</code> directory (<code class="language-plaintext highlighter-rouge">context</code> attribute)</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">development</code> stage of the Dockerfile is defined as follows:</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> golang:1.16-alpine AS build</span>
+<span class="k">WORKDIR</span><span class="s"> /go/src/github.com/org/repo</span>
+<span class="k">COPY</span><span class="s"> . .</span>
+
+<span class="k">RUN </span>go build <span class="nt">-o</span> server .
+
+<span class="k">FROM</span><span class="s"> build AS development</span>
+<span class="k">RUN </span>apk update <span class="se">\
+</span>    <span class="o">&amp;&amp;</span> apk add git
+<span class="k">CMD</span><span class="s"> ["go", "run", "main.go"]</span>
+
+<span class="k">FROM</span><span class="s"> alpine:3.12</span>
+<span class="k">EXPOSE</span><span class="s"> 8000</span>
+<span class="k">COPY</span><span class="s"> --from=build /go/src/github.com/org/repo/server /server</span>
+<span class="k">CMD</span><span class="s"> ["/server"]</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">development</code>target uses a <code class="language-plaintext highlighter-rouge">golang:1.16-alpine</code> image with all dependencies you need for development. You can start your project directly from VS Code and interact with the others applications or services such as the database or the frontend.</p>
+
+<p>In the example, the Docker Compose files are the same. However, they could be different and the services defined in the main Compose file may use other targets to build or directly reference other images.</p>
+
+<h2 id="whats-next">What’s next?</h2>
+
+<p>Learn how to <a href="/desktop/dev-environments/share/">share your Dev Environment</a></p>
+<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="/search/?q=Dev Environments">Dev Environments</a>, <a href="/search/?q=share">share</a>, <a href="/search/?q=collaborate">collaborate</a>, <a href="/search/?q=local">local</a>, <a href="/search/?q=compose">compose</a></span></section>
+                    </main>
+                    <nav class="col-nav">
+                        <div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+                            <div id="navbar" class="nav-sidebar">
+                                <ul class="nav hidden-md hidden-lg"></ul>
+                                <ul class="nav" id="jsTOCLeftNav"></ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="col-toc">
+                        <div class="sidebar hidden-xs hidden-sm">
+                            <div class="toc-nav">
+                                <div class="feedback-links">
+                                    <ul><li><a href="https://github.com/docker/docker.github.io/edit/master/desktop/dev-environments/create-compose-dev-env.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li><li><a href="https://github.com/docker/docker.github.io/issues/new?body=File: [desktop/dev-environments/create-compose-dev-env.md](https://docs.docker.com/desktop/dev-environments/create-compose-dev-env/)" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li><li><div class="toggle-mode">
+  <div class="icon">
+      <i class="fa fa-sun-o" aria-hidden="true"></i>
+  </div>
+  <div class="toggle-switch">
+      <label class="switch">
+          <input type="checkbox" id="switch-style">
+          <span class="slider round"></span>
+      </label>
+  </div>
+  <div class="icon">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </div>
+</div>
+</li>
+                                    </ul>
+                                </div><div id="side-toc-title">On this page:</div>
+<ul id="my_toc" class="inline_toc">
+  <li><a href="#create-a-compose-dev-environment" class="nomunge">Create a Compose Dev Environment</a></li>
+  <li><a href="#set-up-your-own-compose-dev-environment" class="nomunge">Set up your own Compose Dev Environment</a></li>
+  <li><a href="#whats-next" class="nomunge">What’s next?</a></li>
+</ul>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+          
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products" target="_blank" rel="noopener">Product offerings</a></b></li>
+                        <li><a href="https://www.docker.com/products/personal" target="_blank" rel="noopener">Docker Personal</a></li>
+                        <li><a href="https://www.docker.com/products/pro" target="_blank" rel="noopener">Docker Pro</a></li>
+                        <li><a href="https://www.docker.com/products/team" target="_blank" rel="noopener">Docker Team</a></li>
+                        <li><a href="https://www.docker.com/products/business" target="_blank" rel="noopener">Docker Business</a></li>
+                        <li><a href="https://www.docker.com/products" target="_blank" rel="noopener">Compare Subscriptions</a></li>
+                        <li><b><a href="https://www.docker.com/" target="_blank" rel="noopener">Features</a></b></li>
+                        <li><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a></li>
+                        <li><a href="https://www.docker.com/products/docker-hub" target="_blank" rel="noopener">Docker Hub</a></li>
+                        <li><a href="https://www.docker.com/products/secure-software-supply-chain" target="_blank" rel="noopener">Secure Software Supply Chain</a></li>
+                        <li><a href="https://www.docker.com/products/container-runtime" target="_blank" rel="noopener">Container Runtime</a></li>
+                        <li><a href="https://www.docker.com/products/developer-tools" target="_blank" rel="noopener">Developer Tools</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Trusted Content</a></li>
+                        <li><a href="https://www.docker.com/roadmap" target="_blank" rel="noopener">Docker Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Developers</a></b></li>
+                        <li><a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">Use Cases</a></li>
+                        <li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Get Started</a></li>
+                        <li><a href="https://www.docker.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://www.docker.com/docker-community" target="_blank" rel="noopener">Community</a></li>
+                        <li><a href="https://www.docker.com/open-source" target="_blank" rel="noopener">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/get-involved/developer-preview" target="_blank" rel="noopener">Preview Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Pricing</a></b></li>
+                        <li><a href="https://www.docker.com/pricing/faq" target="_blank" rel="noopener">FAQ</a></li>
+                        <li><a href="https://www.docker.com/partners/programs" target="_blank" rel="noopener">Docker Verified Publisher</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/company" target="_blank" rel="noopener">About Us</a></b></li>
+                        <li><a href="https://www.docker.com/what-container" target="_blank" rel="noopener">What is a Container?</a></li>
+                        <li><a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">Why Docker?</a></li>
+                        <li><a href="https://www.docker.com/events" target="_blank" rel="noopener">Virtual Events</a></li>
+                        <li><a href="https://www.docker.com/swag" target="_blank" rel="noopener">Swag Store
+                        </a></li>
+                        <li><a href="https://www.docker.com/company/newsroom" target="_blank" rel="noopener">Newsroom</a></li>
+                        <li><a href="https://www.docker.com/careers" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.docker.com/company/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.docker.com/customers" target="_blank" rel="noopener">Customers</a></li>
+                        <li><a href="https://www.docker.com/newsletter-subscription" target="_blank" rel="noopener">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="https://www.docker.com/legal/docker-terms-service" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="https://status.docker.com/" target="_blank" rel="noopener">Status</a></li>
+                        <li><a href="https://www.docker.com/legal" target="_blank" rel="noopener">Legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright &copy; 2013-2021 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="https://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="https://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker">GitHub</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-slideshare"><a href="https://www.slideshare.net/docker">Slideshare</a></li>
+                    <li class="fa fa-reddit"><a href="https://www.reddit.com/r/docker">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <script>const pageURL = "/desktop/dev-environments/create-compose-dev-env/";</script></body>
+</html>

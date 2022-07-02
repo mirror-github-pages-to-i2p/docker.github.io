@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!-- Page generated 2022-07-02 18:27:36 +0000-->
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex"/><title>Interface: BackendV0 | Docker Documentation</title>
+  <meta name="description" content="Docker extension API reference" />
+  <meta name="keywords" content="Docker, extensions, sdk, API, reference">
+  <link rel="canonical" href="https://localhost:4000/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/" />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <link rel="apple-touch-icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+  <meta property="og:image" content="/favicons/docs@2x.ico"/>
+  <meta name="theme-color" content="#2496ed" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- hide elements that are only shown without JavaScript enabled -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>html.js .no-js { display: none !important; }</style><script defer src="/js/theme-switcher.js"></script>
+  <script defer src="/js/anchorlinks.js"></script>
+  <script defer src="/js/jquery.js"></script>
+  <script defer src="/js/bootstrap.min.js"></script>
+  <script defer src="/js/docs.js"></script><link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Book.woff2"    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/glyphicons-halflings-regular.woff2"       type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/fontawesome-webfont.woff2?v=4.7.0"        type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" id="pagestyle">
+
+  <!-- SEO stuff -->
+  <meta name="twitter:title" itemprop="title name" content="Interface: BackendV0"/>
+  <meta name="twitter:description" property="og:description" itemprop="description" content="" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:domain" content="docs.docker.com"/>
+  <meta name="twitter:site" content="@docker_docs"/>
+  <meta name="twitter:url" content="https://twitter.com/docker_docs"/>
+  <meta name="twitter:image:src" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta name="twitter:image:alt" content="Docker Documentation"/>
+  <meta property="og:title" content="Interface: BackendV0" />
+  <meta property="og:description" content="Docker extension API reference" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:updated_time" itemprop="dateUpdated" content="2022-07-02T18:27:36+00:00"/>
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://docs.docker.com/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/" />
+  <meta property="og:site_name" content="Docker Documentation" />
+  <meta property="article:published_time" itemprop="datePublished" content="2022-07-02T18:27:36+00:00"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Interface: BackendV0","description":"Docker extension API reference","url":"https://docs.docker.com/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/"}</script>
+  <!-- END SEO STUFF -->
+</head>
+<body class="colums">
+    <header>
+        <nav class="nav-secondary navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/">
+                <img class="logo" src="/images/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs" width="160" height="28" />
+            </a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="logo-mobile">
+    <a href="/">
+        <img src="/images/docker-icon.svg" alt="Docker Docs" title="Docker Docs" width="30" height="30" />
+    </a>
+</div>
+<div class="search-form" id="search-div">
+    <form class="search-form form-inline" id="searchForm" action="/search/" method="get">
+        <label for="st-search-input" class="sr-only">Search</label>
+        <input class="search-field form-control ds-input" id="st-search-input" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteResults"></div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container hidden-sm hidden-xs">
+    <div>
+        <ul class="nav navbar-nav"><li><a href="/" id="home">Home</a></li><li><a href="/get-started/overview/" id="guides">Guides</a></li><li><a href="/desktop/" id="manuals">Manuals</a></li><li><a href="/reference/" id="reference">Reference</a></li><li><a href="/samples/" id="samples">Samples</a></li></ul>
+    </div>
+    <div class="ctrl-right">
+        <a href="javascript:void(0)" id="menu-toggle" aria-label="Current page's menu toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="row hidden-sm hidden-xs">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li><a href="/" title="Docker docs homepage"><i class="fa fa-home"></i></a></li>
+            <li><a href="/reference/">Reference</a></li><li><a>API reference</a></li><li><a href="/desktop/extensions-sdk/dev/api/reference/interfaces/DesktopUI/">Docker Extension SDK API (Beta)</a></li><li><a href="/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/">BackendV0</a></li></ol>
+    </nav>
+</div></div>
+    </div>
+</nav>
+
+    </header>
+    <div class="wrapper right-open">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-body">
+                    <main class="col-content content">
+                        <section class="section"><h1 id="interface-backendv0">Interface: BackendV0</h1>
+
+<h2 id="container-methods">Container Methods</h2>
+
+<h3 id="execincontainer">execInContainer</h3>
+
+<p>▸ <strong>execInContainer</strong>(<code class="language-plaintext highlighter-rouge">container</code>, <code class="language-plaintext highlighter-rouge">cmd</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/"><code class="language-plaintext highlighter-rouge">ExecResultV0</code></a>&gt;</p>
+
+<p>Executes a command inside a container.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">backend</span><span class="p">.</span><span class="nx">execInContainer</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">cmd</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version.</p>
+
+<h4 id="parameters">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">container</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cmd</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The command to be executed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/"><code class="language-plaintext highlighter-rouge">ExecResultV0</code></a>&gt;</p>
+
+<hr />
+
+<h2 id="http-methods">HTTP Methods</h2>
+
+<h3 id="get">get</h3>
+
+<p>▸ <strong>get</strong>(<code class="language-plaintext highlighter-rouge">url</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<p>Performs an HTTP GET request to a backend service.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">backend</span>
+ <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/some/service</span><span class="dl">"</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/#get">HttpService.get</a> instead.</p>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The URL of the backend service.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-1">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<hr />
+
+<h3 id="post">post</h3>
+
+<p>▸ <strong>post</strong>(<code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">data</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<p>Performs an HTTP POST request to a backend service.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">backend</span>
+ <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">/some/service</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="p">...</span> <span class="p">})</span>
+ <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/#post">HttpService.post</a> instead.</p>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The URL of the backend service.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">data</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">any</code></td>
+      <td style="text-align: left">The body of the request.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-2">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<hr />
+
+<h3 id="put">put</h3>
+
+<p>▸ <strong>put</strong>(<code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">data</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<p>Performs an HTTP PUT request to a backend service.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">backend</span>
+ <span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="dl">"</span><span class="s2">/some/service</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="p">...</span> <span class="p">})</span>
+ <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/#put">HttpService.put</a> instead.</p>
+
+<h4 id="parameters-3">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The URL of the backend service.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">data</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">any</code></td>
+      <td style="text-align: left">The body of the request.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-3">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<hr />
+
+<h3 id="patch">patch</h3>
+
+<p>▸ <strong>patch</strong>(<code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">data</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<p>Performs an HTTP PATCH request to a backend service.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">backend</span>
+ <span class="p">.</span><span class="nx">patch</span><span class="p">(</span><span class="dl">"</span><span class="s2">/some/service</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="p">...</span> <span class="p">})</span>
+ <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/#patch">HttpService.patch</a> instead.</p>
+
+<h4 id="parameters-4">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The URL of the backend service.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">data</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">any</code></td>
+      <td style="text-align: left">The body of the request.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-4">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<hr />
+
+<h3 id="delete">delete</h3>
+
+<p>▸ <strong>delete</strong>(<code class="language-plaintext highlighter-rouge">url</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<p>Performs an HTTP DELETE request to a backend service.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">backend</span>
+ <span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">"</span><span class="s2">/some/service</span><span class="dl">"</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/#delete">HttpService.delete</a> instead.</p>
+
+<h4 id="parameters-5">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The URL of the backend service.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-5">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<hr />
+
+<h3 id="head">head</h3>
+
+<p>▸ <strong>head</strong>(<code class="language-plaintext highlighter-rouge">url</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<p>Performs an HTTP HEAD request to a backend service.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">backend</span>
+ <span class="p">.</span><span class="nx">head</span><span class="p">(</span><span class="dl">"</span><span class="s2">/some/service</span><span class="dl">"</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/#head">HttpService.head</a> instead.</p>
+
+<h4 id="parameters-6">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The URL of the backend service.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-6">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<hr />
+
+<h3 id="request">request</h3>
+
+<p>▸ <strong>request</strong>(<code class="language-plaintext highlighter-rouge">config</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<p>Performs an HTTP request to a backend service.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">backend</span>
+ <span class="p">.</span><span class="nx">request</span><span class="p">({</span> <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/url</span><span class="dl">"</span><span class="p">,</span> <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="na">headers</span><span class="p">:</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">header-key</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">header-value</span><span class="dl">'</span> <span class="p">},</span> <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}})</span>
+ <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/HttpService/#request">HttpService.request</a> instead.</p>
+
+<h4 id="parameters-7">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">config</code></td>
+      <td style="text-align: left"><a href="/desktop/extensions-sdk/dev/api/reference/interfaces/RequestConfigV0/"><code class="language-plaintext highlighter-rouge">RequestConfigV0</code></a></td>
+      <td style="text-align: left">The URL of the backend service.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-7">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<code class="language-plaintext highlighter-rouge">unknown</code>&gt;</p>
+
+<hr />
+
+<h2 id="vm-methods">VM Methods</h2>
+
+<h3 id="execinvmextension">execInVMExtension</h3>
+
+<p>▸ <strong>execInVMExtension</strong>(<code class="language-plaintext highlighter-rouge">cmd</code>): <code class="language-plaintext highlighter-rouge">Promise</code>&lt;<a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/"><code class="language-plaintext highlighter-rouge">ExecResultV0</code></a>&gt;</p>
+
+<p>Executes a command inside the backend container.
+If your extensions ships with additional binaries that should be run inside the backend container you can use the <code class="language-plaintext highlighter-rouge">execInVMExtension</code> function.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">backend</span><span class="p">.</span><span class="nx">execInVMExtension</span><span class="p">(</span>
+  <span class="s2">`cliShippedInTheVm xxx`</span>
+<span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use <a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExtensionCli/#exec">ExtensionCli.exec</a> instead.</p>
+
+<h4 id="parameters-8">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cmd</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The command to be executed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-8">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>&lt;<a href="/desktop/extensions-sdk/dev/api/reference/interfaces/ExecResultV0/"><code class="language-plaintext highlighter-rouge">ExecResultV0</code></a>&gt;</p>
+
+<hr />
+
+<h3 id="spawninvmextension">spawnInVMExtension</h3>
+
+<p>▸ <strong>spawnInVMExtension</strong>(<code class="language-plaintext highlighter-rouge">cmd</code>, <code class="language-plaintext highlighter-rouge">args</code>, <code class="language-plaintext highlighter-rouge">callback</code>): <code class="language-plaintext highlighter-rouge">void</code></p>
+
+<p>Returns a stream from the command executed in the backend container.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">ddClient</span><span class="p">.</span><span class="nx">spawnInVMExtension</span><span class="p">(</span>
+  <span class="s2">`cmd`</span><span class="p">,</span>
+  <span class="p">[</span><span class="s2">`arg1`</span><span class="p">,</span> <span class="s2">`arg2`</span><span class="p">],</span>
+  <span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="kr">any</span><span class="p">,</span> <span class="nx">err</span><span class="p">:</span> <span class="kr">any</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">stdout</span><span class="p">,</span> <span class="nx">data</span><span class="p">.</span><span class="nx">stderr</span><span class="p">);</span>
+    <span class="c1">// Once the command exits we get the status code</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">code</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong><code class="language-plaintext highlighter-rouge">deprecated</code></strong> :warning: It will be removed in a future version. Use {@link ExtensionCli.spawn} instead.</p>
+
+<h4 id="parameters-9">Parameters</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Name</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cmd</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">The command to be executed.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">args</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code>[]</td>
+      <td style="text-align: left">The arguments of the command to execute.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">callback</code></td>
+      <td style="text-align: left">(<code class="language-plaintext highlighter-rouge">data</code>: <code class="language-plaintext highlighter-rouge">any</code>, <code class="language-plaintext highlighter-rouge">error</code>: <code class="language-plaintext highlighter-rouge">any</code>) =&gt; <code class="language-plaintext highlighter-rouge">void</code></td>
+      <td style="text-align: left">The callback function where to listen from the command output data and errors.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="returns-9">Returns</h4>
+
+<p><code class="language-plaintext highlighter-rouge">void</code></p>
+<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="/search/?q=Docker">Docker</a>, <a href="/search/?q=extensions">extensions</a>, <a href="/search/?q=sdk">sdk</a>, <a href="/search/?q=API">API</a>, <a href="/search/?q=reference">reference</a></span></section>
+                    </main>
+                    <nav class="col-nav">
+                        <div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+                            <div id="navbar" class="nav-sidebar">
+                                <ul class="nav hidden-md hidden-lg"></ul>
+                                <ul class="nav" id="jsTOCLeftNav"></ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="col-toc">
+                        <div class="sidebar hidden-xs hidden-sm">
+                            <div class="toc-nav">
+                                <div class="feedback-links">
+                                    <ul><li><a href="https://github.com/docker/docker.github.io/edit/master/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li><li><a href="https://github.com/docker/docker.github.io/issues/new?body=File: [desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0.md](https://docs.docker.com/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/)" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li><li><div class="toggle-mode">
+  <div class="icon">
+      <i class="fa fa-sun-o" aria-hidden="true"></i>
+  </div>
+  <div class="toggle-switch">
+      <label class="switch">
+          <input type="checkbox" id="switch-style">
+          <span class="slider round"></span>
+      </label>
+  </div>
+  <div class="icon">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </div>
+</div>
+</li>
+                                    </ul>
+                                </div><div id="side-toc-title">On this page:</div>
+<ul id="my_toc" class="inline_toc">
+  <li><a href="#container-methods" class="nomunge">Container Methods</a>
+    <ul>
+      <li><a href="#execincontainer" class="nomunge">execInContainer</a>
+        <ul>
+          <li><a href="#parameters" class="nomunge">Parameters</a></li>
+          <li><a href="#returns" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#http-methods" class="nomunge">HTTP Methods</a>
+    <ul>
+      <li><a href="#get" class="nomunge">get</a>
+        <ul>
+          <li><a href="#parameters-1" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-1" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+      <li><a href="#post" class="nomunge">post</a>
+        <ul>
+          <li><a href="#parameters-2" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-2" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+      <li><a href="#put" class="nomunge">put</a>
+        <ul>
+          <li><a href="#parameters-3" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-3" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+      <li><a href="#patch" class="nomunge">patch</a>
+        <ul>
+          <li><a href="#parameters-4" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-4" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+      <li><a href="#delete" class="nomunge">delete</a>
+        <ul>
+          <li><a href="#parameters-5" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-5" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+      <li><a href="#head" class="nomunge">head</a>
+        <ul>
+          <li><a href="#parameters-6" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-6" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+      <li><a href="#request" class="nomunge">request</a>
+        <ul>
+          <li><a href="#parameters-7" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-7" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#vm-methods" class="nomunge">VM Methods</a>
+    <ul>
+      <li><a href="#execinvmextension" class="nomunge">execInVMExtension</a>
+        <ul>
+          <li><a href="#parameters-8" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-8" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+      <li><a href="#spawninvmextension" class="nomunge">spawnInVMExtension</a>
+        <ul>
+          <li><a href="#parameters-9" class="nomunge">Parameters</a></li>
+          <li><a href="#returns-9" class="nomunge">Returns</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+          
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products" target="_blank" rel="noopener">Product offerings</a></b></li>
+                        <li><a href="https://www.docker.com/products/personal" target="_blank" rel="noopener">Docker Personal</a></li>
+                        <li><a href="https://www.docker.com/products/pro" target="_blank" rel="noopener">Docker Pro</a></li>
+                        <li><a href="https://www.docker.com/products/team" target="_blank" rel="noopener">Docker Team</a></li>
+                        <li><a href="https://www.docker.com/products/business" target="_blank" rel="noopener">Docker Business</a></li>
+                        <li><a href="https://www.docker.com/products" target="_blank" rel="noopener">Compare Subscriptions</a></li>
+                        <li><b><a href="https://www.docker.com/" target="_blank" rel="noopener">Features</a></b></li>
+                        <li><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a></li>
+                        <li><a href="https://www.docker.com/products/docker-hub" target="_blank" rel="noopener">Docker Hub</a></li>
+                        <li><a href="https://www.docker.com/products/secure-software-supply-chain" target="_blank" rel="noopener">Secure Software Supply Chain</a></li>
+                        <li><a href="https://www.docker.com/products/container-runtime" target="_blank" rel="noopener">Container Runtime</a></li>
+                        <li><a href="https://www.docker.com/products/developer-tools" target="_blank" rel="noopener">Developer Tools</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Trusted Content</a></li>
+                        <li><a href="https://www.docker.com/roadmap" target="_blank" rel="noopener">Docker Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Developers</a></b></li>
+                        <li><a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">Use Cases</a></li>
+                        <li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Get Started</a></li>
+                        <li><a href="https://www.docker.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://www.docker.com/docker-community" target="_blank" rel="noopener">Community</a></li>
+                        <li><a href="https://www.docker.com/open-source" target="_blank" rel="noopener">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/get-involved/developer-preview" target="_blank" rel="noopener">Preview Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Pricing</a></b></li>
+                        <li><a href="https://www.docker.com/pricing/faq" target="_blank" rel="noopener">FAQ</a></li>
+                        <li><a href="https://www.docker.com/partners/programs" target="_blank" rel="noopener">Docker Verified Publisher</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/company" target="_blank" rel="noopener">About Us</a></b></li>
+                        <li><a href="https://www.docker.com/what-container" target="_blank" rel="noopener">What is a Container?</a></li>
+                        <li><a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">Why Docker?</a></li>
+                        <li><a href="https://www.docker.com/events" target="_blank" rel="noopener">Virtual Events</a></li>
+                        <li><a href="https://www.docker.com/swag" target="_blank" rel="noopener">Swag Store
+                        </a></li>
+                        <li><a href="https://www.docker.com/company/newsroom" target="_blank" rel="noopener">Newsroom</a></li>
+                        <li><a href="https://www.docker.com/careers" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.docker.com/company/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.docker.com/customers" target="_blank" rel="noopener">Customers</a></li>
+                        <li><a href="https://www.docker.com/newsletter-subscription" target="_blank" rel="noopener">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="https://www.docker.com/legal/docker-terms-service" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="https://status.docker.com/" target="_blank" rel="noopener">Status</a></li>
+                        <li><a href="https://www.docker.com/legal" target="_blank" rel="noopener">Legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright &copy; 2013-2021 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="https://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="https://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker">GitHub</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-slideshare"><a href="https://www.slideshare.net/docker">Slideshare</a></li>
+                    <li class="fa fa-reddit"><a href="https://www.reddit.com/r/docker">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <script>const pageURL = "/desktop/extensions-sdk/dev/api/reference/interfaces/BackendV0/";</script></body>
+</html>

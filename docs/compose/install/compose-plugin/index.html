@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!-- Page generated 2022-07-02 18:27:36 +0000-->
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex"/><title>Install Docker Compose CLI plugin | Docker Documentation</title>
+  <meta name="description" content="How to install Docker Compose CLI plugin" />
+  <meta name="keywords" content="compose, orchestration, install, installation, docker, documentation">
+  <link rel="canonical" href="https://localhost:4000/compose/install/compose-plugin/" />
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <link rel="apple-touch-icon" type="image/x-icon" href="/favicons/docs@2x.ico" sizes="129x128">
+  <meta name="msapplication-TileImage" content="/favicons/docs@2x.ico">
+  <meta property="og:image" content="/favicons/docs@2x.ico"/>
+  <meta name="theme-color" content="#2496ed" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- hide elements that are only shown without JavaScript enabled -->
+  <script>document.documentElement.classList.add('js')</script>
+  <style>html.js .no-js { display: none !important; }</style><script defer src="/js/theme-switcher.js"></script>
+  <script defer src="/js/anchorlinks.js"></script>
+  <script defer src="/js/jquery.js"></script>
+  <script defer src="/js/bootstrap.min.js"></script>
+  <script defer src="/js/docs.js"></script><link rel="preload" as="font" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Book.woff2"    type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/geomanist/hinted-Geomanist-Regular.woff2" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/glyphicons-halflings-regular.woff2"       type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="font" href="/fonts/fontawesome-webfont.woff2?v=4.7.0"        type="font/woff2" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css" id="pagestyle">
+
+  <!-- SEO stuff -->
+  <meta name="twitter:title" itemprop="title name" content="Install Docker Compose CLI plugin"/>
+  <meta name="twitter:description" property="og:description" itemprop="description" content="" />
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:domain" content="docs.docker.com"/>
+  <meta name="twitter:site" content="@docker_docs"/>
+  <meta name="twitter:url" content="https://twitter.com/docker_docs"/>
+  <meta name="twitter:image:src" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta name="twitter:image:alt" content="Docker Documentation"/>
+  <meta property="og:title" content="Install Docker Compose CLI plugin" />
+  <meta property="og:description" content="How to install Docker Compose CLI plugin" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:updated_time" itemprop="dateUpdated" content="2022-07-02T18:27:36+00:00"/>
+  <meta property="og:image" itemprop="image primaryImageOfPage" content="https://docs.docker.com/images/docs@2x.png"/>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://docs.docker.com/compose/install/compose-plugin/" />
+  <meta property="og:site_name" content="Docker Documentation" />
+  <meta property="article:published_time" itemprop="datePublished" content="2022-07-02T18:27:36+00:00"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Install Docker Compose CLI plugin","description":"How to install Docker Compose CLI plugin","url":"https://docs.docker.com/compose/install/compose-plugin/"}</script>
+  <!-- END SEO STUFF -->
+</head>
+<body class="colums">
+    <header>
+        <nav class="nav-secondary navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/">
+                <img class="logo" src="/images/docker-docs-logo.svg" alt="Docker Docs" title="Docker Docs" width="160" height="28" />
+            </a>
+        </div>
+        <div class="navbar-collapse" aria-expanded="false" style="height: 1px;">
+            <div class="logo-mobile">
+    <a href="/">
+        <img src="/images/docker-icon.svg" alt="Docker Docs" title="Docker Docs" width="30" height="30" />
+    </a>
+</div>
+<div class="search-form" id="search-div">
+    <form class="search-form form-inline" id="searchForm" action="/search/" method="get">
+        <label for="st-search-input" class="sr-only">Search</label>
+        <input class="search-field form-control ds-input" id="st-search-input" name="q" placeholder="Search the docs" type="search" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+        <div id="autocompleteResults"></div>
+        <!-- <button type="submit" class="search-submit btn btn-default">Search</button> -->
+    </form>
+</div>
+<div class="sidebar-toggle">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="nav-container hidden-sm hidden-xs">
+    <div>
+        <ul class="nav navbar-nav"><li><a href="/" id="home">Home</a></li><li><a href="/get-started/overview/" id="guides">Guides</a></li><li><a href="/desktop/" id="manuals">Manuals</a></li><li><a href="/reference/" id="reference">Reference</a></li><li><a href="/samples/" id="samples">Samples</a></li></ul>
+    </div>
+    <div class="ctrl-right">
+        <a href="javascript:void(0)" id="menu-toggle" aria-label="Current page's menu toggle"><i class="fa fa-indent" aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="row hidden-sm hidden-xs">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li><a href="/" title="Docker docs homepage"><i class="fa fa-home"></i></a></li>
+            <li><a href="/desktop/">Manuals</a></li><li><a href="/compose/">Docker Compose</a></li><li><a href="/compose/install/">Install Compose</a></li><li><a href="/compose/install/compose-plugin/">Install Docker Compose Plugin</a></li></ol>
+    </nav>
+</div></div>
+    </div>
+</nav>
+
+    </header>
+    <div class="wrapper right-open">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-body">
+                    <main class="col-content content">
+                        <section class="section"><h1>Install Docker Compose CLI plugin</h1><p><em class="reading-time">Estimated reading time: 6 minutes</em></p><p>On this page you can find instructions on how to install the Compose plugin for Docker CLI on Linux and Windows Server operating systems.</p>
+<blockquote>
+  <p>Note that installing Docker Compose as a plugin requires Docker CLI.</p>
+</blockquote>
+
+<h2 id="installing-compose-on-linux-systems">Installing Compose on Linux systems</h2>
+
+<p>In this section, you can find various methods for installing Compose on Linux.</p>
+
+<h3 id="installation-methods">Installation methods</h3>
+
+<ul>
+  <li><a href="/desktop/linux/install/" target="_blank" rel="noopener" class="_">Installing Docker Desktop for Linux</a> is the easiest and recommended installation route. 
+Check the Desktop for Linux <a href="/desktop/linux/install/#supported-platforms" target="_blank" rel="noopener" class="_">supported platforms</a> page to verify the supported Linux distributions and architectures.</li>
+</ul>
+
+<p>The following other methods are possible:</p>
+
+<ul>
+  <li>
+    <p><strong>Using the automated convenience scripts</strong> (for testing and development environments). 
+These scripts install Docker Engine and Docker CLI with the Compose plugin. 
+For this route, go to the <a href="../../../engine/install/" target="_blank" rel="noopener" class="_">Docker Engine install</a> page and follow the provided instructions. <em>After installing Desktop for Linux, this is the recommended route.</em></p>
+  </li>
+  <li>
+    <p><strong>Setting up Docker’s repository</strong> and using it to install Docker CLI Compose plugin. See the <a href="#install-using-the-repository">Install using the repository</a> section on this page. <em>This is the second best route.</em></p>
+  </li>
+  <li>
+    <p><strong>Installing the Docker CLI Compose plugin manually</strong>. See the <a href="#install-the-plugin-manually">Install the plugin manually</a> section on this page. <em>Note that this option requires you to manage upgrades manually as well.</em></p>
+  </li>
+</ul>
+
+<h3 id="install-using-the-repository">Install using the repository</h3>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>These instructions assume you already have Docker Engine and Docker CLI installed and now want to install the Compose plugin. 
+For other Linux installation methods see <a href="#installation-methods">this summary</a>.</p>
+</blockquote>
+
+<blockquote>
+  <p>To run Compose as a non-root user, see <a href="/engine/install/linux-postinstall/" target="_blank" rel="noopener" class="_">Manage Docker as a non-root user</a>.</p>
+</blockquote>
+
+<p>If you have already set up the Docker repository jump to step 2.</p>
+
+<ol>
+  <li>
+    <p>Set up the repository. Go to the “Set up the repository” section of the chosen <a href="/engine/install/#server" target="_blank" rel="noopener" class="_">Linux distribution</a>. found on the Docker Engine installation pages to check the instructions.</p>
+  </li>
+  <li>
+    <p>Update the <code class="language-plaintext highlighter-rouge">apt</code> package index, and install the <em>latest version</em> of Docker Compose:</p>
+
+    <blockquote>
+      <p>Or, if using a different distro, use the equivalent package manager instructions.</p>
+    </blockquote>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> $</span><span class="w"> </span><span class="nb">sudo </span>apt-get update
+<span class="gp"> $</span><span class="w"> </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>docker-compose-plugin
+</code></pre></div>    </div>
+
+    <p>Alternatively, to install a specific version of Compose CLI plugin:</p>
+
+    <p>a. List the versions available in your repo:</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">   $</span><span class="w"> </span>apt-cache madison docker-compose-plugin
+<span class="go">
+     docker-compose-plugin | 2.3.3~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable arm64 Packages
+</span></code></pre></div>    </div>
+
+    <p>b. From the list obtained use the version string you can in the second column to specify the version you wish to install.</p>
+
+    <p>c. Install the selected version:</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">   $</span><span class="w"> </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>docker-compose-plugin<span class="o">=</span>&lt;VERSION_STRING&gt;
+</code></pre></div>    </div>
+    <p>where <code class="language-plaintext highlighter-rouge">&lt;VERSION_STRING&gt;</code> is, for example,<code class="language-plaintext highlighter-rouge">2.3.3~ubuntu-focal</code>.</p>
+  </li>
+  <li>
+    <p>Verify that Docker Compose is installed correctly by checking the version.</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>docker compose version
+<span class="go">Docker Compose version v2.3.3
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="install-the-plugin-manually">Install the plugin manually</h3>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>These instructions assume you already have Docker Engine and Docker CLI installed and now want to install the Compose plugin.</p>
+
+  <p>Note as well this option requires you to manage upgrades manually. Whenever possible we recommend any of the other installation methods listed. For other Linux installation methods see <a href="#installation-methods">this summary</a>.</p>
+</blockquote>
+
+<blockquote>
+  <p>To run Compose as a non-root user, see <a href="/engine/install/linux-postinstall/">Manage Docker as a non-root user</a>.</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>To download and install the Compose CLI plugin, run:</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nv">DOCKER_CONFIG</span><span class="o">=</span><span class="k">${</span><span class="nv">DOCKER_CONFIG</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.docker</span><span class="k">}</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$DOCKER_CONFIG</span>/cli-plugins
+<span class="gp">$</span><span class="w"> </span>curl <span class="nt">-SL</span> https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64 <span class="nt">-o</span> <span class="nv">$DOCKER_CONFIG</span>/cli-plugins/docker-compose
+</code></pre></div>    </div>
+
+    <p>This command downloads the latest release of Docker Compose (from the Compose releases repository) and installs Compose for the active user under <code class="language-plaintext highlighter-rouge">$HOME</code> directory.</p>
+
+    <blockquote>
+      <p>To install:</p>
+      <ul>
+        <li>Docker Compose for <em>all users</em> on your system, replace <code class="language-plaintext highlighter-rouge">~/.docker/cli-plugins</code> with <code class="language-plaintext highlighter-rouge">/usr/local/lib/docker/cli-plugins</code>.</li>
+        <li>A different version of Compose, substitute <code class="language-plaintext highlighter-rouge">v2.6.1</code> with the version of Compose you want to use.</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>
+    <p>Apply executable permissions to the binary:</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> $</span><span class="w"> </span><span class="nb">chmod</span> +x <span class="nv">$DOCKER_CONFIG</span>/cli-plugins/docker-compose
+</code></pre></div>    </div>
+    <p>or, if you chose to install Compose for all users:</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> $</span><span class="w"> </span><span class="nb">sudo chmod</span> +x /usr/local/lib/docker/cli-plugins/docker-compose
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Test the installation.</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> $</span><span class="w"> </span>docker compose version
+<span class="go"> Docker Compose version v2.6.1
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p><strong>Compose standalone</strong>: If you need to use Compose without installing the Docker CLI, the instructions for the standalone scenario are similar. 
+Note the target folder for the binary’s installation is different as well as the compose syntax used with the plugin (<em>space compose</em>) or the standalone version (<em>dash compose</em>).</p>
+</blockquote>
+
+<ol>
+  <li>To download and install Compose standalone, run:
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">  $</span><span class="w"> </span>curl <span class="nt">-SL</span> https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64 <span class="nt">-o</span> /usr/local/bin/docker-compose
+</code></pre></div>    </div>
+  </li>
+  <li>Apply executable permissions to the standalone binary in the target path for the installation.</li>
+  <li>Test and execute compose commands using <code class="language-plaintext highlighter-rouge">docker-compose</code>.</li>
+</ol>
+
+<blockquote>
+  <p><strong>Note</strong></p>
+
+  <p>If the command <code class="language-plaintext highlighter-rouge">docker-compose</code> fails after installation, check your path.
+You can also create a symbolic link to <code class="language-plaintext highlighter-rouge">/usr/bin</code> or any other directory in your path. 
+For example:</p>
+  <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /usr/local/bin/docker-compose /usr/bin/docker-compose
+</code></pre></div>  </div>
+</blockquote>
+
+<h2 id="install-compose-on-windows-server">Install Compose on Windows Server</h2>
+
+<p>Follow these instructions if you are running the Docker daemon and client directly
+on Microsoft Windows Server and want to install Docker Compose.</p>
+
+<ol>
+  <li>
+    <p>Run a PowerShell as an administrator. 
+When asked if you want to allow this app to make changes to your device, click <strong>Yes</strong> in order to proceed with the installation.</p>
+  </li>
+  <li>
+    <p>GitHub now requires TLS1.2. In PowerShell, run the following:</p>
+
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">Net.ServicePointManager</span><span class="p">]::</span><span class="n">SecurityProtocol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">Net.SecurityProtocolType</span><span class="p">]::</span><span class="n">Tls12</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run the following command to download the latest release of Compose (v2.6.1):</p>
+
+    <div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="n">Invoke-WebRequest</span><span class="w"> </span><span class="s2">"https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-Windows-x86_64.exe"</span><span class="w"> </span><span class="nt">-UseBasicParsing</span><span class="w"> </span><span class="nt">-OutFile</span><span class="w"> </span><span class="nv">$</span><span class="nn">Env</span><span class="p">:</span><span class="nv">ProgramFiles</span><span class="nx">\Docker\docker-compose.exe</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <blockquote>
+      <p><strong>Note</strong></p>
+
+      <p>On Windows Server 2019 you can add the Compose executable to <code class="language-plaintext highlighter-rouge">$Env:ProgramFiles\Docker</code>.
+  Because this directory is registered in the system <code class="language-plaintext highlighter-rouge">PATH</code>, you can run the <code class="language-plaintext highlighter-rouge">docker-compose --version</code> 
+  command on the subsequent step with no additional configuration.</p>
+    </blockquote>
+
+    <blockquote>
+      <p>To install a different version of Compose, substitute <code class="language-plaintext highlighter-rouge">v2.6.1</code>
+with the version of Compose you want to use.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Test the installation.</p>
+
+    <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>docker compose version
+<span class="go">Docker Compose version v2.6.1
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<span class="glyphicon glyphicon-tags" style="padding-right: 10px"></span><span style="vertical-align: 2px"><a href="/search/?q=compose">compose</a>, <a href="/search/?q=orchestration">orchestration</a>, <a href="/search/?q=install">install</a>, <a href="/search/?q=installation">installation</a>, <a href="/search/?q=docker">docker</a>, <a href="/search/?q=documentation">documentation</a></span></section>
+                    </main>
+                    <nav class="col-nav">
+                        <div id="sidebar-nav" class="sidebar hidden-sm hidden-xs">
+                            <div id="navbar" class="nav-sidebar">
+                                <ul class="nav hidden-md hidden-lg"></ul>
+                                <ul class="nav" id="jsTOCLeftNav"></ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="col-toc">
+                        <div class="sidebar hidden-xs hidden-sm">
+                            <div class="toc-nav">
+                                <div class="feedback-links">
+                                    <ul><li><a href="https://github.com/docker/docker.github.io/edit/master/compose/install/compose-plugin.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></li><li><a href="https://github.com/docker/docker.github.io/issues/new?body=File: [compose/install/compose-plugin.md](https://docs.docker.com/compose/install/compose-plugin/)" class="nomunge"><i class="fa fa-check" aria-hidden="true"></i> Request docs changes</a></li><li><div class="toggle-mode">
+  <div class="icon">
+      <i class="fa fa-sun-o" aria-hidden="true"></i>
+  </div>
+  <div class="toggle-switch">
+      <label class="switch">
+          <input type="checkbox" id="switch-style">
+          <span class="slider round"></span>
+      </label>
+  </div>
+  <div class="icon">
+      <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </div>
+</div>
+</li>
+                                    </ul>
+                                </div><div id="side-toc-title">On this page:</div>
+<ul id="my_toc" class="inline_toc">
+  <li><a href="#installing-compose-on-linux-systems" class="nomunge">Installing Compose on Linux systems</a>
+    <ul>
+      <li><a href="#installation-methods" class="nomunge">Installation methods</a></li>
+      <li><a href="#install-using-the-repository" class="nomunge">Install using the repository</a></li>
+      <li><a href="#install-the-plugin-manually" class="nomunge">Install the plugin manually</a></li>
+    </ul>
+  </li>
+  <li><a href="#install-compose-on-windows-server" class="nomunge">Install Compose on Windows Server</a></li>
+</ul>
+
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+          
+    <div class="container">
+        <div class="top_footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products" target="_blank" rel="noopener">Product offerings</a></b></li>
+                        <li><a href="https://www.docker.com/products/personal" target="_blank" rel="noopener">Docker Personal</a></li>
+                        <li><a href="https://www.docker.com/products/pro" target="_blank" rel="noopener">Docker Pro</a></li>
+                        <li><a href="https://www.docker.com/products/team" target="_blank" rel="noopener">Docker Team</a></li>
+                        <li><a href="https://www.docker.com/products/business" target="_blank" rel="noopener">Docker Business</a></li>
+                        <li><a href="https://www.docker.com/products" target="_blank" rel="noopener">Compare Subscriptions</a></li>
+                        <li><b><a href="https://www.docker.com/" target="_blank" rel="noopener">Features</a></b></li>
+                        <li><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Docker Desktop</a></li>
+                        <li><a href="https://www.docker.com/products/docker-hub" target="_blank" rel="noopener">Docker Hub</a></li>
+                        <li><a href="https://www.docker.com/products/secure-software-supply-chain" target="_blank" rel="noopener">Secure Software Supply Chain</a></li>
+                        <li><a href="https://www.docker.com/products/container-runtime" target="_blank" rel="noopener">Container Runtime</a></li>
+                        <li><a href="https://www.docker.com/products/developer-tools" target="_blank" rel="noopener">Developer Tools</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Trusted Content</a></li>
+                        <li><a href="https://www.docker.com/roadmap" target="_blank" rel="noopener">Docker Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Developers</a></b></li>
+                        <li><a href="https://www.docker.com/use-cases" target="_blank" rel="noopener">Use Cases</a></li>
+                        <li><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener">Get Started</a></li>
+                        <li><a href="https://www.docker.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+                        <li><a href="https://www.docker.com/docker-community" target="_blank" rel="noopener">Community</a></li>
+                        <li><a href="https://www.docker.com/open-source" target="_blank" rel="noopener">Open Source</a></li>
+                        <li><a href="https://www.docker.com/community/get-involved/developer-preview" target="_blank" rel="noopener">Preview Program</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener">Pricing</a></b></li>
+                        <li><a href="https://www.docker.com/pricing/faq" target="_blank" rel="noopener">FAQ</a></li>
+                        <li><a href="https://www.docker.com/partners/programs" target="_blank" rel="noopener">Docker Verified Publisher</a></li>
+                        <li><a href="https://www.docker.com/partners" target="_blank" rel="noopener">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <ul class="footer_links">
+                        <li><b><a href="https://www.docker.com/company" target="_blank" rel="noopener">About Us</a></b></li>
+                        <li><a href="https://www.docker.com/what-container" target="_blank" rel="noopener">What is a Container?</a></li>
+                        <li><a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">Why Docker?</a></li>
+                        <li><a href="https://www.docker.com/events" target="_blank" rel="noopener">Virtual Events</a></li>
+                        <li><a href="https://www.docker.com/swag" target="_blank" rel="noopener">Swag Store
+                        </a></li>
+                        <li><a href="https://www.docker.com/company/newsroom" target="_blank" rel="noopener">Newsroom</a></li>
+                        <li><a href="https://www.docker.com/careers" target="_blank" rel="noopener">Careers</a></li>
+                        <li><a href="https://www.docker.com/company/contact" target="_blank" rel="noopener">Contact Us</a></li>
+                        <li><a href="https://www.docker.com/customers" target="_blank" rel="noopener">Customers</a></li>
+                        <li><a href="https://www.docker.com/newsletter-subscription" target="_blank" rel="noopener">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <nav class="footer_sub_nav">
+                    <ul class="menu">
+                        <li><a href="https://www.docker.com/legal/docker-terms-service" target="_blank" rel="noopener">Terms of Service</a></li>
+                        <li><a href="https://status.docker.com/" target="_blank" rel="noopener">Status</a></li>
+                        <li><a href="https://www.docker.com/legal" target="_blank" rel="noopener">Legal</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="footer-copyright col-xs-12 col-md-8">
+                <p class="copyright">
+                    Copyright &copy; 2013-2021 Docker Inc. All rights reserved. </p>
+            </div>
+            <div class="footer_social_nav">
+                <ul class="nav-social">
+                    <li class="fa fa-twitter"><a href="https://twitter.com/docker">Twitter</a></li>
+                    <li class="fa fa-youtube"><a href="https://www.youtube.com/user/dockerrun">Youtube</a></li>
+                    <li class="fa fa-github"><a href="https://github.com/docker">GitHub</a></li>
+                    <li class="fa fa-linkedin"><a href="https://www.linkedin.com/company/docker">Linkedin</a></li>
+                    <li class="fa fa-facebook"><a href="https://www.facebook.com/docker.run">Facebook</a></li>
+                    <li class="fa fa-slideshare"><a href="https://www.slideshare.net/docker">Slideshare</a></li>
+                    <li class="fa fa-reddit"><a href="https://www.reddit.com/r/docker">Reddit</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <script>const pageURL = "/compose/install/compose-plugin/";</script></body>
+</html>
